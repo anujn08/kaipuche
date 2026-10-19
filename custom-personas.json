@@ -1,0 +1,37 @@
+[
+  {
+    "id": "custom-3f0293aa-add7-4d7b-a173-267e9e98ed58",
+    "label": "Anuj",
+    "shrines": [
+      "Yamunotri",
+      "Gangotri",
+      "Kedarnath",
+      "Badrinath"
+    ],
+    "answers": {
+      "travelType": "Group",
+      "groupSize": "6",
+      "tripStatus": "Ongoing",
+      "age": "25-34",
+      "gender": "Male",
+      "originStateUT": "Uttarakhand",
+      "occupation": "Student",
+      "startPoint": "Haridwar",
+      "primaryMode_HemkundSahib_route": "Bus/MiniBus"
+    },
+    "fixedAnswers": {
+      "travelType": "Group",
+      "groupSize": "6",
+      "tripStatus": "Ongoing",
+      "age": "25-34",
+      "gender": "Male",
+      "originStateUT": "Uttarakhand",
+      "occupation": "Student",
+      "startPoint": "Haridwar",
+      "primaryMode_HemkundSahib_route": "Bus/MiniBus"
+    },
+    "userCreated": true,
+    "description": "Saved persona · Group · 25-34",
+    "createdAt": "2026-10-19T09:06:54.819Z"
+  }
+]

@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilgrimage Travel Survey</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,bn,gu,kn,ml,mr,ne,pa,ta,te,ur',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+      window.dispatchEvent(new Event('googleTranslateReady'));
+    }
+  </script>
+  
+</head>
+<body>
+  <dialog id="resumeDraftDialog" aria-labelledby="resumeDraftTitle" aria-describedby="resumeDraftDescription">
+    <h2 id="resumeDraftTitle">Continue your survey?</h2>
+    <p id="resumeDraftDescription">An unfinished survey is saved on this browser. Resume with your previous answers, or start a fresh survey.</p>
+    <button type="button" id="resumeDraftBtn" autofocus>Resume Survey</button>
+    <button type="button" id="freshDraftBtn">Start Fresh</button>
+  </dialog>
+
+  <iframe name="googleSheetTarget" id="googleSheetTarget" style="display:none;"></iframe>
+
+  <div class="floating-language">
+    <button type="button" class="language-toggle" aria-label="Change language" title="Change language">文</button>
+    <div class="language-panel">
+      <span>Choose Language</span>
+      <div id="floatingTranslateMount">
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pageBackground" class="page-background"></div>
+
+  <div style="text-align:center; padding: 20px 0;">
+    <img class="survey-header-image" src="images/Char-Dham-with-Hemkund-Sahib-Yatra-2026-Dream-Go-Himalayas.jpg" alt="Yamunotri, Gangotri, Badrinath, Kedarnath and Hemkund Sahib shrines">
+  </div>
+
+  <h1>Pilgrimage Travel Survey</h1>
+
+  <div id="progress-indicator">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+  </div>
+
+  <form id="surveyForm">
+  <input type="hidden" name="choiceBlock" id="choiceBlock">
+  <input type="hidden" name="surveyStartTimestamp" id="surveyStartTimestamp">
+  <input type="hidden" name="surveySubmitTimestamp" id="surveySubmitTimestamp">
+  <input type="hidden" name="surveyCompletionSeconds" id="surveyCompletionSeconds">
+  <input type="hidden" name="deviceId" id="deviceId">
+  <input type="hidden" name="deviceFingerprint" id="deviceFingerprint">
+  <input type="hidden" name="geoLat" id="geoLat">
+  <input type="hidden" name="geoLng" id="geoLng">
+  <input type="hidden" name="geoAccuracy" id="geoAccuracy">
+  <input type="hidden" name="geoTimestamp" id="geoTimestamp">
+  <input type="hidden" name="geoStatus" id="geoStatus">
+
+  <div class="form-page" id="page-0-consent">
+        <div class="consent-language-prompt">
+            <div>
+                <b>Select your preferred language</b>
+                <span>You can change it anytime using the language icon at the top-right.</span>
+            </div>
+            <div id="consentTranslateMount"></div>
+        </div>
+        <div id="consent-content">
+            <h2>Pilgrimage Travel Survey</h2>
+            <p class="consent-lead">Namaskar 🙏 We are researchers at IIT Roorkee studying how pilgrims travel to the Himalayan shrines of Uttarakhand: Kedarnath, Badrinath, Gangotri, Yamunotri and <span translate="no">Hemkund Sahib</span>.</p>
+
+            <h3 class="consent-subhead">Why this survey?</h3>
+            <div class="consent-why">
+                <div><span class="consent-icon">🛣️</span><p>Find where the journey is <b>hard, costly or slow</b>: long waits, many vehicle changes, tough treks</p></div>
+                <div><span class="consent-icon">🚡</span><p>Learn which <b>new options</b> pilgrims want, such as the hill railway, ropeways and better buses</p></div>
+                <div><span class="consent-icon">🏛️</span><p>Help plan <b>safer, cheaper and more comfortable</b> yatras in future</p></div>
+            </div>
+
+            <h3 class="consent-subhead">What's inside</h3>
+            <ol class="consent-steps">
+                <li><span class="consent-icon">👤</span><b>About you</b><small>age, group, home state</small></li>
+                <li><span class="consent-icon">🧭</span><b>Your journey</b><small>route, modes, time, cost, stay</small></li>
+                <li><span class="consent-icon">⚖️</span><b>Pick your option</b><small>choose between travel options</small></li>
+                <li><span class="consent-icon">💬</span><b>Your views</b><small>priorities and suggestions</small></li>
+            </ol>
+
+            <div class="consent-facts">
+                <span>⏱️ About <b>8–10 min</b></span>
+                <span>🙋 Voluntary: you can stop anytime</span>
+                <span>🔒 Used only for academic research</span>
+            </div>
+
+            <div class="lucky-draw-box">
+                <span class="consent-icon lucky-draw-icon">🎁</span>
+                <p><b>Lucky draw: win ₹100!</b> Complete the survey and enter your GPay / UPI number to join the draw. Optional: it is used only to send the prize.</p>
+                <input type="text" name="luckyDrawUpi" id="luckyDrawUpi" inputmode="text" autocomplete="off" maxlength="60"
+                       placeholder="GPay number or UPI ID (e.g. 98XXXXXXXX or name@okaxis)">
+            </div>
+            <p>By clicking "I Accept and Agree" you consent to take part.</p>
+            <div class="consent-contact">
+                <h3>Queries or Feedback</h3>
+                <p><b>Anuj Nautiyal</b><br>
+                PhD Scholar, Indian Institute of Technology Roorkee, Uttarakhand<br>
+                Contact: 8192832623<br>
+                Email: anuj_n@ce.iitr.ac.in</p>
+            </div>
+        </div>
+        <button type="button" id="consent-btn" onclick="nextPrev(1)">I Accept and Agree</button>
+    </div>
+
+  <div class="form-page" id="page-1-E">
+        <p class="fatigue-progress" style="text-align:right;">Page 9 of 10 · ~2 min</p>
+        <h2>Section E: Respondent Profile & Demographics</h2>
+        <p class="privacy-note">These details are collected near the end to help analyze travel patterns across different pilgrim groups. Your responses will be used only for academic research and planning purposes, and will not be shared publicly.</p>
+        <h3>E1: Basic Demographic Characteristics</h3>
+
+        <label>Age:
+          <span class="field-helper">Select your age group.</span>
+          <select name="age" required>
+            <option value="">--Select--</option>
+            <option>Under 15</option>
+            <option>15-24</option>
+            <option>25-34</option>
+            <option>35-44</option>
+            <option>45-54</option>
+            <option>55-64</option>
+            <option>65 and above</option>
+          </select>
+        </label>
+
+        <label>Gender:
+          <span class="field-helper">Select the gender you identify with.</span>
+          <select name="gender" required>
+            <option value="">--Select--</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary / Other</option>
+            <option>Prefer not to say</option>
+          </select>
+        </label>
+
+        <label>Origin State/UT:
+          <span class="field-helper">Where did this pilgrimage trip mainly start from?</span>
+          <select name="originStateUT" required>
+            <option value="">--Select State/UT--</option>
+            <option>Andhra Pradesh</option>
+            <option>Arunachal Pradesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chhattisgarh</option>
+            <option>Goa</option>
+            <option>Gujarat</option>
+            <option>Haryana</option>
+            <option>Himachal Pradesh</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerala</option>
+            <option>Madhya Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>Odisha</option>
+            <option>Punjab</option>
+            <option>Rajasthan</option>
+            <option>Sikkim</option>
+            <option>Tamil Nadu</option>
+            <option>Telangana</option>
+            <option>Tripura</option>
+            <option>Uttar Pradesh</option>
+            <option>Uttarakhand</option>
+            <option>West Bengal</option>
+            <option disabled>----- Union Territories -----</option>
+            <option>Andaman and Nicobar Islands</option>
+            <option>Chandigarh</option>
+            <option>Dadra and Nagar Haveli and Daman and Diu</option>
+            <option>Delhi (NCT)</option>
+            <option>Jammu and Kashmir</option>
+            <option>Ladakh</option>
+            <option>Lakshadweep</option>
+            <option>Puducherry</option>
+            <option disabled>----- International -----</option>
+            <option>International</option>
+          </select>
+        </label>
+
+        <label>Nearest Origin City/District (optional):
+          <span class="field-helper">Name the nearest city or district to your home/start location.</span>
+          <input type="text" name="originCityDistrict" placeholder="e.g., Delhi, Mumbai, Kolkata, Patna">
+        </label>
+
+        <label>Occupation:
+          <span class="field-helper">Select your main work or activity.</span>
+          <select name="occupation" required>
+            <option value="">--Select--</option>
+            <option>Prefer not to say</option>
+            <option>Government Employee</option>
+            <option>Private Employee</option>
+            <option>Business/Self Employed</option>
+            <option>Retired</option>
+            <option>Student</option>
+            <option>Homemaker</option>
+            <option>Unemployed</option>
+          </select>
+        </label>
+
+        <label>Monthly Household Income (optional):
+          <span class="field-helper">Select your approximate household income range.</span>
+          <select name="income">
+            <option value="">Prefer not to say</option>
+            <option>Below ₹15,000</option>
+            <option>₹15,000-₹30,000</option>
+            <option>₹30,000-₹50,000</option>
+            <option>₹50,000-₹75,000</option>
+            <option>₹75,000-₹1,00,000</option>
+            <option>Above ₹1,00,000</option>
+          </select>
+        </label>
+
+        <label>Highest Education Level:
+          <span class="field-helper">Select the highest level of education completed.</span>
+          <select name="education" required>
+            <option value="">--Select--</option>
+            <option value="prefer_not_to_say">Prefer not to say</option>
+            <option value="primary">Primary (Up to 5th grade)</option>
+            <option value="secondary">Secondary (6th to 12th grade)</option>
+            <option value="diploma">Diploma</option>
+            <option value="graduate">Graduate (Bachelor's degree)</option>
+            <option value="post_graduate">Post Graduate (Master's degree)</option>
+            <option value="professional">Professional (Ph.D.)</option>
+            <option value="other">Uneducated</option>
+          </select>
+        </label>
+
+        <div id="geoStatusBar" style="display:flex;align-items:center;gap:8px;margin:12px 0 0 0;padding:8px 12px;border-radius:6px;font-size:0.82em;background:#f0f4f8;color:#444;border:1px solid #d0dce8;">
+          <span id="geoStatusIcon" style="font-size:1.1em;">📍</span>
+          <span id="geoStatusText">Fetching location…</span>
+        </div>
+        <div class="nav-buttons">
+          <div style="float:left;">
+            <button type="button" onclick="nextPrev(-1)">Previous</button>
+          </div>
+          <div style="float:right;">
+            <button type="button" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+    </div>
+
+  <div class="form-page" id="page-2-B">
+        <p class="fatigue-progress" style="text-align:right;">Page 2 of 10 · ~3 min</p>
+        <h2>Section A: Current Travel Behaviour</h2>
+
+        <h3>A1: Travel Group Characteristics</h3>
+        <fieldset class="answer-question">
+          <legend>Trip status:</legend><span class="field-helper">Tell us whether this pilgrimage is completed, ongoing, or planned.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="tripStatus" value="Completed" required><span>Completed</span></label>
+            <label class="answer-choice"><input type="radio" name="tripStatus" value="Ongoing" required><span>Ongoing</span></label>
+            <label class="answer-choice"><input type="radio" name="tripStatus" value="Being planned" required><span>Being planned</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="answer-question" id="travelType">
+          <legend>Travel type:</legend>
+          <span class="field-helper">How are you travelling?</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="travelType" value="Solo" required><span>Solo (alone)</span></label>
+            <label class="answer-choice"><input type="radio" name="travelType" value="Group" required><span>Group (with others)</span></label>
+          </div>
+        </fieldset>
+
+        <label id="groupSizeLabel">Group size, including you:
+          <span class="field-helper">Enter the total number of people travelling together.</span>
+          <input type="number" name="groupSize" id="groupSize" min="1" value="1" required>
+        </label>
+        <p id="groupSizeHelper" style="font-size: 0.85em; color: grey;">This is your travelling party size; vehicle occupancy is asked separately in A4.1.</p>
+
+        <div id="groupCompositionFields" class="group-composition-fields" style="display:none;">
+          <p>Approximate group composition, if known:</p>
+          <label>Adults:
+            <input type="number" name="groupAdults" min="0" placeholder="e.g., 4">
+          </label>
+          <label>Children:
+            <input type="number" name="groupChildren" min="0" placeholder="e.g., 2">
+          </label>
+          <label>Elderly persons:
+            <input type="number" name="groupElderly" min="0" placeholder="e.g., 1">
+          </label>
+          <label>Persons needing assistance:
+            <input type="number" name="groupAssistanceCount" min="0" placeholder="e.g., 1">
+          </label>
+          <p id="groupCompositionMessage" class="field-helper"></p>
+        </div>
+
+        <h3>A1.1: Trip Planning & Booking</h3>
+        <fieldset class="answer-question">
+          <legend>Who arranged this trip?</legend><span class="field-helper">Who mainly planned and organised the transport and travel for this trip?</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="transportDecisionMaker" value="Self" required><span>Self</span></label>
+            <label class="answer-choice"><input type="radio" name="transportDecisionMaker" value="Family"><span>Family</span></label>
+            <label class="answer-choice"><input type="radio" name="transportDecisionMaker" value="Tour operator / Travel agent"><span>Tour operator / Agent</span></label>
+            <label class="answer-choice"><input type="radio" name="transportDecisionMaker" value="Other"><span>Other</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="answer-question">
+          <legend>Yatra registration status:</legend><span class="field-helper">Did you register on the official Char Dham Yatra portal?</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="yatraRegistration" value="Yes" required><span>Yes</span></label>
+            <label class="answer-choice"><input type="radio" name="yatraRegistration" value="No" required><span>No</span></label>
+            <label class="answer-choice"><input type="radio" name="yatraRegistration" value="Was not aware of it" required><span>Was not aware of it</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Shown for Group travelers only -->
+        <fieldset class="answer-question" id="budgetScopeBlock" style="display:none">
+          <legend>Is this transport cost per person or for the whole group?</legend>
+          <span class="field-helper">Group travel costs can vary a lot. A tour package for 6 people is very different from one person's share. Tell us which figure you can give.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="transportBudgetBasis" value="Per person"><span>Per person</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudgetBasis" value="Whole group"><span>Whole group</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Per-person budget (always shown for Solo; shown for Group when Per person selected) -->
+        <fieldset class="answer-question" id="budgetPerPersonBlock">
+          <legend>Transport spending per person:</legend>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="transportBudget" value="Below Rs 2000" required><span>Below ₹2,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudget" value="Rs 2000-5000"><span>₹2,000–₹5,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudget" value="Rs 5000-10000"><span>₹5,000–₹10,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudget" value="Rs 10000-20000"><span>₹10,000–₹20,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudget" value="Above Rs 20000"><span>Above ₹20,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudget" value="Prefer not to say"><span>Prefer not to say</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Group total budget (shown for Group when Whole group selected) -->
+        <fieldset class="answer-question" id="budgetGroupBlock" style="display:none">
+          <legend>Total transport spending for the whole group:</legend>
+          <span class="field-helper">Combined transport cost for your entire group (bus, taxi, helicopter, palki, ropeway, tour package, etc.) for the full return trip. Do not include stay or food.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="transportBudgetGroup" value="Below Rs 10000"><span>Below ₹10,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudgetGroup" value="Rs 10000-25000"><span>₹10,000–₹25,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudgetGroup" value="Rs 25000-50000"><span>₹25,000–₹50,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudgetGroup" value="Rs 50000-100000"><span>₹50,000–₹1,00,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudgetGroup" value="Above Rs 100000"><span>Above ₹1,00,000</span></label>
+            <label class="answer-choice"><input type="radio" name="transportBudgetGroup" value="Prefer not to say"><span>Prefer not to say</span></label>
+          </div>
+        </fieldset>
+
+        <h3>A2: Visit History &amp; Frequency</h3>
+        <p>For each shrine, mark how many times you visited before and whether it is included in this trip.</p>
+        <table class="grid-table" id="visitHistoryTable">
+          <colgroup><col class="visit-shrine-column"><col span="5"><col class="visit-current-column"></colgroup>
+          <thead>
+          <tr>
+            <th rowspan="2" scope="col">Shrine</th>
+            <th colspan="5">Number of Previous Visits</th>
+            <th rowspan="2" scope="col">Visiting on this Trip?</th>
+          </tr>
+          <tr>
+            <th scope="col">0</th>
+            <th scope="col">1</th>
+            <th scope="col">2</th>
+            <th scope="col">3</th>
+            <th scope="col">&gt;3</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Yamunotri</td>
+            <td><input type="radio" name="yamunotri" value="0"></td>
+            <td><input type="radio" name="yamunotri" value="1"></td>
+            <td><input type="radio" name="yamunotri" value="2"></td>
+            <td><input type="radio" name="yamunotri" value="3"></td>
+            <td><input type="radio" name="yamunotri" value=">3"></td>
+            <td><input type="checkbox" class="current-dham-checkbox" data-dham="Yamunotri" name="dhamCurrentVisit" value="Yamunotri"></td>
+          </tr>
+          <tr>
+            <td>Gangotri</td>
+            <td><input type="radio" name="gangotri" value="0"></td>
+            <td><input type="radio" name="gangotri" value="1"></td>
+            <td><input type="radio" name="gangotri" value="2"></td>
+            <td><input type="radio" name="gangotri" value="3"></td>
+            <td><input type="radio" name="gangotri" value=">3"></td>
+            <td><input type="checkbox" class="current-dham-checkbox" data-dham="Gangotri" name="dhamCurrentVisit" value="Gangotri"></td>
+          </tr>
+          <tr>
+            <td>Kedarnath</td>
+            <td><input type="radio" name="kedarnath" value="0"></td>
+            <td><input type="radio" name="kedarnath" value="1"></td>
+            <td><input type="radio" name="kedarnath" value="2"></td>
+            <td><input type="radio" name="kedarnath" value="3"></td>
+            <td><input type="radio" name="kedarnath" value=">3"></td>
+            <td><input type="checkbox" class="current-dham-checkbox" data-dham="Kedarnath" name="dhamCurrentVisit" value="Kedarnath"></td>
+          </tr>
+          <tr>
+            <td>Badrinath</td>
+            <td><input type="radio" name="badrinath" value="0"></td>
+            <td><input type="radio" name="badrinath" value="1"></td>
+            <td><input type="radio" name="badrinath" value="2"></td>
+            <td><input type="radio" name="badrinath" value="3"></td>
+            <td><input type="radio" name="badrinath" value=">3"></td>
+            <td><input type="checkbox" class="current-dham-checkbox" data-dham="Badrinath" name="dhamCurrentVisit" value="Badrinath"></td>
+          </tr>
+          <tr>
+            <td><span translate="no">Hemkund Sahib</span></td>
+            <td><input type="radio" name="hemkund" value="0"></td>
+            <td><input type="radio" name="hemkund" value="1"></td>
+            <td><input type="radio" name="hemkund" value="2"></td> <td><input type="radio" name="hemkund" value="3"></td>
+            <td><input type="radio" name="hemkund" value=">3"></td>
+            <td><input type="checkbox" class="current-dham-checkbox" data-dham="Hemkund Sahib" name="dhamCurrentVisit" value="Hemkund Sahib"></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <div id="ongoingDhamStatusSection" class="ongoing-dham-status-section" style="display:none;">
+          <h4>Progress of your ongoing trip</h4>
+          <p class="field-helper">For each shrine included in this trip, indicate whether it is completed, currently underway, or planned next.</p>
+          <div id="ongoingDhamStatusCards"></div>
+        </div>
+
+        <label id="repeatVisitReasonLabel" style="display:none;">Main reason for returning:
+          <span class="field-helper">Answer this only if you have visited any selected shrine before.</span>
+          <select name="repeatVisitReason" id="repeatVisitReason">
+            <option value="">--Select--</option>
+            <option>Deeper spiritual experience</option>
+            <option>Family / group tradition</option>
+            <option>Could not complete last time</option>
+            <option>Accompanying family or friends</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <div id="previousTransportExperience" style="display:none;">
+        <h3>A2.1: Your Previous Transport Experience</h3>
+        <p class="field-helper">Think about a previous pilgrimage to these shrines or a similar one. Tick all that apply; skip if this is your first pilgrimage.</p>
+        <fieldset class="answer-question">
+          <legend>Which main-haul modes have you used before?</legend>
+          <span class="field-helper">Travel to the base town or road-head.</span>
+          <div class="answer-buttons">
+          <label><input type="checkbox" name="priorModeExp" value="bus_minibus"> State bus or mini-bus to base town</label>
+          <label><input type="checkbox" name="priorModeExp" value="shared_taxi"> Shared taxi or jeep to base town</label>
+          <label><input type="checkbox" name="priorModeExp" value="private_taxi"> Private hired taxi or car</label>
+          <label><input type="checkbox" name="priorModeExp" value="own_vehicle"> Own vehicle (car / motorcycle)</label>
+          <label><input type="checkbox" name="priorModeExp" value="train_hills"> Train for any hill destination</label>
+          </div>
+        </fieldset>
+        <fieldset class="answer-question">
+          <legend>Which last-mile modes have you used before?</legend>
+          <span class="field-helper">Travel from the base or road-head to the shrine.</span>
+          <div class="answer-buttons">
+          <label><input type="checkbox" name="priorModeExp" value="trek"> Trekking to shrine on foot</label>
+          <label><input type="checkbox" name="priorModeExp" value="palki_pony"> Pony, Palki, Doli, or Porter to shrine</label>
+          <label><input type="checkbox" name="priorModeExp" value="helicopter"> Helicopter to or from shrine</label>
+          </div>
+        </fieldset>
+        </div>
+
+        <h3>A3: Travel Itinerary &amp; Sequence</h3>
+        <fieldset class="answer-question" id="startPoint">
+          <legend>Trip starting point:</legend><span class="field-helper">Select where your pilgrimage journey starts.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="startPoint" value="Haridwar" required><span>Haridwar</span></label>
+            <label class="answer-choice"><input type="radio" name="startPoint" value="Rishikesh"><span>Rishikesh</span></label>
+            <label class="answer-choice"><input type="radio" name="startPoint" value="Dehradun"><span>Dehradun</span></label>
+            <label class="answer-choice"><input type="radio" name="startPoint" value="Other"><span>Other</span></label>
+          </div>
+        </fieldset>
+
+        <label id="otherStartPointLabel" style="display:none;">Starting point:
+          <span class="field-helper">Type the city or place where your trip starts.</span>
+          <input type="text" name="otherStartPoint" id="otherStartPoint" placeholder="e.g., Dehradun, Delhi, Kotdwar">
+        </label>
+
+        <fieldset class="answer-question">
+          <legend>About how many days is your whole pilgrimage trip?</legend>
+          <span class="field-helper">Include travel to the shrines, your stay, and the return journey. For an ongoing or planned trip, choose your best estimate.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="totalDurationDays" value="1-3 days" required><span>1–3 days</span></label>
+            <label class="answer-choice"><input type="radio" name="totalDurationDays" value="4-7 days" required><span>4–7 days</span></label>
+            <label class="answer-choice"><input type="radio" name="totalDurationDays" value="8-10 days" required><span>8–10 days</span></label>
+            <label class="answer-choice"><input type="radio" name="totalDurationDays" value="11-14 days" required><span>11–14 days</span></label>
+            <label class="answer-choice"><input type="radio" name="totalDurationDays" value="15+ days" required><span>15+ days</span></label>
+            <label class="answer-choice"><input type="radio" name="totalDurationDays" value="Not sure yet" required><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
+
+        <div id="dhamSequenceSelection">
+            <h4>Order of Shrine Visits</h4>
+            <p style="color: grey;">Select Shrines in A2 to show visit-order fields.</p>
+        </div>
+
+        <div class="nav-buttons">
+          <div style="float:left;">
+            <button type="button" onclick="nextPrev(-1)">Previous</button>
+          </div>
+          <div style="float:right;">
+            <button type="button" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+    </div>
+
+  <div class="form-page" id="page-2B-journey">
+    <p class="fatigue-progress" style="text-align:right;">Page 3 of 10 · ~4 min</p>
+        <h2>Section A (continued): Your Journey Details</h2>
+
+        <h3>A4: Transportation Mode Choice</h3>
+        <fieldset class="answer-question" id="onwardVehicleContinuity">
+          <legend>During your onward pilgrimage journey, did you use the same vehicle throughout?</legend>
+          <span class="field-helper">Think from your starting point through all selected shrine road-heads or base towns.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="onwardVehicleContinuity" value="Same vehicle throughout" required><span>Yes, same vehicle throughout</span></label>
+            <label class="answer-choice"><input type="radio" name="onwardVehicleContinuity" value="Changed vehicle or mode" required><span>No, changed vehicle or mode</span></label>
+          </div>
+        </fieldset>
+
+        <section class="journey-visual" id="mainHaulJourneyPreview" aria-live="polite">
+          <div class="journey-visual-title">Your onward journey</div>
+          <p class="journey-visual-empty">Select your starting point, shrine order, and travel mode to build the route.</p>
+        </section>
+
+        <div id="mainHaulJourneyDetails" style="display:none;">
+        <p id="mainHaulTransferHint" class="field-helper"></p>
+        <h4>A4.1 Main-Haul Travel (Onward Journey)</h4>
+        <p style="clear: both;">Enter the main travel route, mode, time, and cost for each segment of your <strong>onward journey</strong> (start point → Shrine base/destination). If your trip is <em>ongoing or planned</em>, enter the mode you intend to use.</p>
+        <p class="field-helper"><strong>Mode guide:</strong> Shared = pay per seat; Hired = whole vehicle booked; Own = personal or family vehicle. First select whether the vehicle changed within the leg.</p>
+        <p class="field-helper">Enter the one-way amount paid and use “Fare entered as” to identify what that amount covers. Enter ₹0 if there was no separate fare because transport was included in a package. Do not include accommodation or food.</p>
+        <table id="primaryModeTable" class="journey-card-table">
+            <thead>
+                <tr>
+                    <th>Shrine</th>
+                    <th>Route/Segment</th>
+                    <th class="transfer-column">Vehicle Changes Within This Leg</th>
+                    <th>Mode Used at Start of Leg</th>
+                    <th>One-Way Time (hrs)</th>
+                    <th>One-Way Fare (₹)</th>
+                    <th>Fare Entered As</th>
+                    <th class="occupancy-header">Vehicle Occupancy</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+        </div>
+
+        <div id="mainHaulTransferDetails" style="display:none;">
+          <h4>Transfer Details</h4>
+          <p class="field-helper">For each change, enter the transfer location and details of the vehicle used from that point onward. Time and fare should cover the journey from this transfer point to the next transfer or the first shrine base. If there were more than three transfers, enter the first three.</p>
+          <table id="mainHaulTransferDetailsTable" class="journey-card-table">
+            <thead>
+              <tr>
+                <th>Transfer</th>
+                <th>Intermediate Transfer Location</th>
+                <th>Mode After Transfer</th>
+                <th>Time After Transfer (hrs)</th>
+                <th>Fare After Transfer (₹)</th>
+                <th>Fare Entered As</th>
+                <th>Vehicle Occupancy</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="interDhamSection" style="display:none;">
+          <h4>A4.1a Inter-Shrine Travel</h4>
+          <p>For each journey after your first shrine, enter travel details from the previous base to the next. Use the copy button when the mode and fare type are unchanged, then enter only that leg's time and fare.</p>
+          <p class="field-helper">Enter the one-way amount paid and state what that amount covers. Enter ₹0 if transport was included in a package. For an ongoing or planned trip, enter your best estimate.</p>
+          <table id="interDhamTable" class="journey-card-table">
+            <thead>
+              <tr>
+                <th>Route/Segment</th>
+                <th>Vehicle Changes Within This Leg</th>
+                <th>Mode Used at Start of Leg</th>
+                <th>One-Way Time (hrs)</th>
+                <th>One-Way Fare (₹)</th>
+                <th>Fare Entered As</th>
+                <th>Vehicle Occupancy</th>
+              </tr>
+            </thead>
+            <tbody id="interDhamTableBody"></tbody>
+          </table>
+          <p class="field-helper" id="interDhamHint" style="margin-top:6px;"></p>
+        </div>
+
+        <h4>A4.1b Return Journey (Shrine → Start Point)</h4>
+        <p class="field-helper">If you took a different mode on your return, enter it below. If return mode and cost were the same as onward, select "Same as onward journey."</p>
+        <fieldset class="answer-question" id="returnJourneyType">
+          <legend>Return journey details:</legend>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="returnJourneyType" value="same" required><span>Same mode and cost as onward journey</span></label>
+            <label class="answer-choice"><input type="radio" name="returnJourneyType" value="different"><span>Different mode or cost on return</span></label>
+            <label class="answer-choice"><input type="radio" name="returnJourneyType" value="notapplicable"><span>Not applicable (one-way trip / trip not completed yet)</span></label>
+          </div>
+        </fieldset>
+        <div id="returnJourneyDetails" style="display:none;">
+          <p class="field-helper">Enter how you travelled from your final shrine back to your starting point. Add another row only if you changed vehicle or mode during the return.</p>
+          <fieldset class="answer-question" id="returnVehicleContinuity">
+            <legend>During the return journey, did you use the same vehicle or mode throughout?</legend>
+            <div class="answer-buttons">
+              <label class="answer-choice"><input type="radio" name="returnVehicleContinuity" value="Same vehicle or mode throughout"><span>Same vehicle/mode throughout</span></label>
+              <label class="answer-choice"><input type="radio" name="returnVehicleContinuity" value="Changed vehicle or mode"><span>Changed vehicle or mode</span></label>
+            </div>
+          </fieldset>
+          <div id="returnModeEntry" style="display:none;">
+          <div class="field-helper" style="background:#e7f0f4;border-left:3px solid #527b91;padding:8px 12px;margin-bottom:8px;">
+            <strong>Cost note:</strong> Enter <u>one-way return fare per person (₹)</u>.
+          </div>
+          <table id="returnModeTable" class="journey-card-table">
+            <thead>
+              <tr>
+                <th>Shrine</th>
+                <th>Route/Segment</th>
+                <th>Return Mode</th>
+                <th>Return Time (hrs)</th>
+                <th>Return Cost per Person (₹)</th>
+                <th>Fare Entered As</th>
+                <th>Vehicle Occupancy</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <button type="button" id="addReturnModeRow" onclick="addReturnRow()">Add Return Segment</button>
+          </div>
+        </div>
+        <script>
+          document.getElementById('returnJourneyType').addEventListener('change', function() {
+            updateReturnJourneyDetails();
+          });
+          document.getElementById('returnVehicleContinuity').addEventListener('change', updateReturnJourneyDetails);
+          function updateReturnJourneyDetails() {
+            var isDifferent = document.querySelector('input[name="returnJourneyType"]:checked')?.value === 'different';
+            var continuity = document.querySelector('input[name="returnVehicleContinuity"]:checked')?.value || '';
+            var details = document.getElementById('returnJourneyDetails');
+            var entry = document.getElementById('returnModeEntry');
+            var continuityInputs = document.querySelectorAll('input[name="returnVehicleContinuity"]');
+            details.style.display = isDifferent ? 'block' : 'none';
+            continuityInputs.forEach(function(input) { input.required = isDifferent; input.disabled = !isDifferent; });
+            if (isDifferent && !document.querySelector('#returnModeTable tbody tr')) addReturnRow();
+            entry.style.display = isDifferent && continuity ? 'block' : 'none';
+            var changed = continuity === 'Changed vehicle or mode';
+            document.getElementById('addReturnModeRow').style.display = changed ? 'inline-block' : 'none';
+            document.querySelectorAll('#returnModeTable tbody tr').forEach(function(row, index) {
+              row.hidden = !changed && index > 0;
+              row.querySelectorAll('input, select').forEach(function(control) {
+                var active = isDifferent && !!continuity && !row.hidden;
+                control.disabled = !active;
+                control.required = active;
+              });
+            });
+            renderJourneyPreviews();
+          }
+          function addReturnRow() {
+            var tbody = document.querySelector('#returnModeTable tbody');
+            var tr = document.createElement('tr');
+            var rowKey = Date.now().toString(36) + '_' + tbody.rows.length;
+            var isFirst = tbody.rows.length === 0;
+            var orderedDhams = getOrderedDhams();
+            var finalDham = orderedDhams[orderedDhams.length - 1] || '';
+            var defaultRoute = isFirst && finalDham ? getReturnJourneyOrigin(finalDham) + ' → ' + getSelectedStartPointLabel() : '';
+            tr.innerHTML = '<td><input type="text" name="returnDham[]" placeholder="Shrine name" value="' + escapeAttribute(isFirst ? finalDham : '') + '"></td>' +
+              '<td><input type="text" name="returnRoute[]" placeholder="e.g. Sonprayag → Rishikesh" value="' + escapeAttribute(defaultRoute) + '"></td>' +
+              '<td data-label="Return Mode">' + getRoadTravelModeButtonsHTML('returnMode_' + rowKey) + '</td>' +
+              '<td data-label="Return Time">' + getCompactChoiceButtonsHTML('returnTime_' + rowKey, getInterDhamTimeChoices()) + '</td>' +
+              '<td data-label="Return Fare">' + getCompactChoiceButtonsHTML('returnCost_' + rowKey, getTravelCostChoices()) + '</td>' +
+              '<td data-label="Fare Entered As"><select name="returnFareBasis_' + rowKey + '">' + getFareBasisOptionsHTML() + '</select></td>' +
+              '<td data-label="Vehicle Occupancy" data-occupancy-for="returnOccupancy_' + rowKey + '">' + getCompactChoiceButtonsHTML('returnOccupancy_' + rowKey, getVehicleOccupancyChoices()) + '</td>' +
+              '<td><button type="button" onclick="this.closest(\'tr\').remove(); updateReturnJourneyDetails();">Remove</button></td>';
+            tbody.appendChild(tr);
+            updateReturnJourneyDetails();
+          }
+        </script>
+
+        <h4>A4.1c En-route Stopover Facilities</h4>
+        <p>Mention important stops during the main-haul route. Location options are filtered for each selected shrine. Add approximate cost if paid.</p>
+        <table id="restLocationTable">
+            <thead>
+                <tr>
+                    <th>Route/Segment</th>
+                    <th>Stopover/Facility Location</th>
+                    <th>Main Facility/Purpose</th>
+                    <th>Stop Duration</th>
+                    <th>Stay/Facility Type</th>
+                    <th>Stop Cost</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+        <button type="button" id="addRestLocationRow">Add Additional Rest Stop</button>
+
+        <div class="nav-buttons">
+          <div style="float:left;">
+            <button type="button" onclick="nextPrev(-1)">Previous</button>
+          </div>
+          <div style="float:right;">
+            <button type="button" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+    </div>
+
+  <div class="form-page" id="page-2C-lastmile">
+    <p class="fatigue-progress" style="text-align:right;">Page 4 of 10 · ~3 min</p>
+    <h2>Section A (continued): Last-Mile Travel &amp; Stay</h2>
+
+        <section class="journey-visual" id="lastMileJourneyPreview" aria-live="polite">
+          <div class="journey-visual-title">Your shrine approach</div>
+          <p class="journey-visual-empty">Select a last-mile mode to build the route.</p>
+        </section>
+
+
+        <h4>A4.2 Last-Mile Travel (Base Camp / Road-head → Shrine)</h4>
+        <p>Enter the final access mode from the road-head or base camp to each shrine. For Kedarnath, first choose whether you travelled through Sonprayag/Gaurikund or flew from a helipad. For <span translate="no">Hemkund Sahib</span>, record each leg separately: Govindghat → Pulna, Pulna → Ghangaria, and Ghangaria → <span translate="no">Hemkund Sahib</span>. If your trip is <em>ongoing or planned</em>, enter your intended mode.</p>
+        <fieldset class="answer-question kedarnath-approach-question" id="kedarnathAccessChoice" style="display:none;">
+          <legend>Kedarnath: Which route did you use for the final journey?</legend>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="kedarnathAccessType" value="Via Sonprayag and Gaurikund"><span>Via Sonprayag and Gaurikund</span></label>
+            <label class="answer-choice"><input type="radio" name="kedarnathAccessType" value="Helicopter from helipad"><span>Helicopter from a helipad</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="answer-question kedarnath-approach-question" id="kedarnathApproachQuestion" style="display:none;">
+          <legend>Kedarnath: How did you travel from Sonprayag to Gaurikund?</legend>
+          <span class="field-helper">Select the mode used for this first section. Then complete the Gaurikund → Kedarnath Temple details below.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="lastMileApproachMode_Kedarnath" value="Government-operated shuttle"><span>Government-operated shuttle</span></label>
+            <label class="answer-choice"><input type="radio" name="lastMileApproachMode_Kedarnath" value="Walk"><span>Walk</span></label>
+          </div>
+          <div class="approach-detail-grid" id="kedarnathShuttleDetails" style="display:none;">
+            <div class="approach-field-group">
+              <label id="kedarnathApproachTimeLabel">Travel time
+                <select name="lastMileApproachTimeBand_Kedarnath">
+                  <option value="">-- Choose time band --</option>
+                  <option value="&lt; 30 min">Less than 30 minutes</option>
+                  <option value="30 min – 1 hr">30 min – 1 hour</option>
+                  <option value="1 – 2 hrs">1 – 2 hours</option>
+                  <option value="2 – 3 hrs">2 – 3 hours</option>
+                  <option value="3 – 5 hrs">3 – 5 hours</option>
+                  <option value="5 – 8 hrs">5 – 8 hours</option>
+                  <option value="&gt; 8 hrs">More than 8 hours</option>
+                  <option value="exact">Other / exact hours</option>
+                </select>
+              </label>
+              <label id="kedarnathApproachTimeExactLabel" style="display:none;">Exact time (hours)
+                <input type="number" name="lastMileApproachTime_Kedarnath" min="0" step="0.1" placeholder="e.g., 5" disabled>
+              </label>
+            </div>
+            <div id="kedarnathApproachCostLabel" style="display:none;">
+              <span style="font-weight:600;">Cost per person, one-way (₹)</span>
+              <div style="margin-top:4px; padding:6px 10px; background:#f0f4f2; border:1px solid #cbd8d0; border-radius:6px; font-size:1rem; font-weight:700;">₹50</div>
+              <input type="hidden" name="lastMileApproachCost_Kedarnath" value="50">
+            </div>
+            <label id="kedarnathApproachWaitingLabel">Waiting time
+              <select name="lastMileApproachWaitingRange_Kedarnath">
+                <option value="">--Select waiting time--</option>
+                <option value="0">No waiting</option>
+                <option value="Under 15">Less than 15 minutes</option>
+                <option value="15–20">15–20 minutes</option>
+                <option value="21–30">21–30 minutes</option>
+                <option value="31–60">31–60 minutes</option>
+                <option value="61–120">1–2 hours</option>
+                <option value="121–180">2–3 hours</option>
+                <option value="181–240">3–4 hours</option>
+                <option value="Over 240">More than 4 hours</option>
+                <option value="exact">Other / exact value</option>
+              </select>
+            </label>
+            <label id="kedarnathExactWaitingLabel" style="display:none;">Exact waiting time (minutes)
+              <input type="number" name="lastMileApproachWaitingTime_Kedarnath" min="0" step="1" placeholder="e.g., 30" disabled>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="answer-question kedarnath-approach-question" id="kedarnathHelicopterDetails" style="display:none;">
+          <legend>Kedarnath helicopter journey</legend>
+          <div class="approach-detail-grid">
+            <label>Boarding helipad
+              <select name="kedarnathHelicopterBoardingPoint">
+                <option value="">--Select--</option><option>Phata</option><option>Sersi</option><option>Guptkashi</option><option>Other</option>
+              </select>
+            </label>
+            <label>Travel time (hours)
+              <input type="number" name="kedarnathHelicopterTime" min="0" step="0.1" placeholder="e.g., 0.2">
+            </label>
+            <label>Cost per person, one-way (₹)
+              <input type="number" name="kedarnathHelicopterCost" min="0" placeholder="e.g., 3500">
+            </label>
+            <label>Waiting time (minutes)
+              <input type="number" name="kedarnathHelicopterWaitingTime" min="0" step="1" placeholder="e.g., 60">
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="answer-question hemkund-onward-card" id="hemkundOnwardCard" style="display:none;">
+          <legend><span translate="no">Hemkund Sahib</span>: onward journey</legend>
+          <p class="field-helper">Route: Govindghat → Pulna → Ghangaria → <span translate="no">Hemkund Sahib</span>. Fill in each part below.</p>
+        <div class="return-leg" id="hemkundTaxiDetails">
+          <div class="return-leg-title">Leg 1: Govindghat → Pulna</div>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="lastMileApproachMode_HemkundSahib" value="Shared Taxi / Shuttle"><span>Shared Taxi / Shuttle</span></label>
+            <label class="answer-choice"><input type="radio" name="lastMileApproachMode_HemkundSahib" value="Walk"><span>Walk</span></label>
+          </div>
+          <div class="approach-detail-grid" id="hemkundApproachDetailGrid" style="display:none;">
+            <div class="approach-field-group">
+              <label id="hemkundApproachTimeLabel">Travel time
+                <select name="lastMileApproachTimeBand_HemkundSahib">
+                  <option value="">-- Choose time band --</option>
+                  <option value="&lt; 30 min">Less than 30 minutes</option>
+                  <option value="30 min – 1 hr">30 min – 1 hour</option>
+                  <option value="1 – 2 hrs">1 – 2 hours</option>
+                  <option value="2 – 3 hrs">2 – 3 hours</option>
+                  <option value="3 – 5 hrs">3 – 5 hours</option>
+                  <option value="5 – 8 hrs">5 – 8 hours</option>
+                  <option value="&gt; 8 hrs">More than 8 hours</option>
+                  <option value="exact">Other / exact hours</option>
+                </select>
+              </label>
+              <label id="hemkundApproachTimeExactLabel" style="display:none;">Exact time (hours)
+                <input type="number" name="lastMileApproachTime_HemkundSahib" min="0" step="0.1" placeholder="e.g., 1" disabled>
+              </label>
+            </div>
+            <label id="hemkundTaxiCostLabel" style="display:none;">Cost per person, one-way (₹)
+              <input type="number" name="lastMileApproachCost_HemkundSahib" min="0" readonly disabled>
+
+            </label>
+            <label id="hemkundWaitingLabel" style="display:none;">Waiting time
+              <select name="lastMileApproachWaitingRange_HemkundSahib">
+                <option value="">--Select waiting time--</option>
+                <option value="0">No waiting</option>
+                <option value="Under 15">Less than 15 minutes</option>
+                <option value="15–20">15–20 minutes</option>
+                <option value="21–30">21–30 minutes</option>
+                <option value="31–60">31–60 minutes</option>
+                <option value="61–120">1–2 hours</option>
+                <option value="121–180">2–3 hours</option>
+                <option value="181–240">3–4 hours</option>
+                <option value="Over 240">More than 4 hours</option>
+                <option value="exact">Other / exact value</option>
+              </select>
+            </label>
+            <label id="hemkundExactWaitingLabel" style="display:none;">Exact waiting time (minutes)
+              <input type="number" name="lastMileApproachWaitingTime_HemkundSahib" min="0" step="1" placeholder="e.g., 30" disabled>
+            </label>
+          </div>
+        </div>
+        <div class="return-leg" id="hemkundMountainDetails" style="display:none;">
+          <div class="return-leg-title">Leg 2: <span id="hemkundLeg2Route">Pulna → Ghangaria</span></div>
+          <div class="approach-detail-grid">
+            <div class="hemkund-choice-group"><div class="hemkund-field-title">Where did this leg end?</div><div class="answer-buttons"><label class="answer-choice"><input type="radio" name="lastMileApproachDestination_HemkundSahib" value="Ghangaria" disabled required><span>Ghangaria (separate next leg)</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachDestination_HemkundSahib" value="Hemkund Sahib" disabled required><span><span translate="no">Hemkund Sahib</span> (same mode all the way)</span></label></div></div>
+            <div class="hemkund-choice-group"><div class="hemkund-field-title">Mode from Pulna</div><div class="answer-buttons"><label class="answer-choice"><input type="radio" name="lastMileApproachMountainMode_HemkundSahib" value="Trek/Walk" disabled required><span>Walk</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachMountainMode_HemkundSahib" value="Pony/Mule" disabled required><span>Pony / Mule</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachMountainMode_HemkundSahib" value="Palki/Dandi" disabled required><span>Palki / Dandi</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachMountainMode_HemkundSahib" value="Pithu / Kandi" disabled required><span>Pithu / Kandi</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachMountainMode_HemkundSahib" value="Other" disabled required><span>Other</span></label></div></div>
+            <div class="approach-field-group">
+              <label>One-way travel time (excluding stops)
+                <select name="lastMileApproachMountainTimeBand_HemkundSahib" disabled required>
+                  <option value="">-- Choose time band --</option>
+                  <option value="Under 2 hr">Less than 2 hours</option>
+                  <option value="2–3 hr">2 – 3 hours</option>
+                  <option value="3–4 hr">3 – 4 hours</option>
+                  <option value="4–6 hr">4 – 6 hours</option>
+                  <option value="6–8 hr">6 – 8 hours</option>
+                  <option value="8–10 hr">8 – 10 hours</option>
+                  <option value="Over 10 hr">More than 10 hours</option>
+                  <option value="exact">Other / exact hours</option>
+                </select>
+              </label>
+              <label id="hemkundMountainTimeExactLabel" style="display:none;">Exact time (hours)
+                <input type="number" name="lastMileApproachMountainTime_HemkundSahib" min="0" step="0.1" placeholder="e.g., 4.5" disabled>
+              </label>
+            </div>
+            <div class="approach-field-group">
+              <label>One-way cost per person (₹)
+                <select name="lastMileApproachMountainCostBand_HemkundSahib" disabled required>
+                  <option value="">-- Select mode first --</option>
+                </select>
+              </label>
+              <label id="hemkundMountainCostExactLabel" style="display:none;">Exact cost per person (₹)
+                <input type="number" name="lastMileApproachMountainCost_HemkundSahib" min="0" step="any" placeholder="e.g., 1200" disabled>
+              </label>
+            </div>
+            <div class="hemkund-choice-group" id="hemkundGhangariaStopLabel"><div class="hemkund-field-title">Stop at Ghangaria before continuing</div><div class="answer-buttons"><label class="answer-choice"><input type="radio" name="lastMileApproachStop_HemkundSahib" value="No stop" disabled required><span>No stop</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachStop_HemkundSahib" value="Same-day rest" disabled required><span>Same-day rest</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachStop_HemkundSahib" value="One night; continued next day" disabled required><span>One night, continued next day</span></label><label class="answer-choice"><input type="radio" name="lastMileApproachStop_HemkundSahib" value="Two or more nights" disabled required><span>Two or more nights</span></label></div></div>
+          </div>
+        </div>
+        <div id="hemkundLeg3Slot"></div>
+        </fieldset>
+        <div class="field-helper" id="lastMileCostNote" style="background:#e7f0f4;border-left:3px solid #527b91;padding:8px 12px;margin-bottom:8px;">
+          <strong>Cost note:</strong> Enter <u>one-way cost per person (₹)</u>. Trek/walk = ₹0.
+        </div>
+        <table id="lastMileTable">
+            <thead>
+                <tr>
+                    <th>Shrine</th>
+                    <th>Route/Segment</th>
+                    <th>Mode Used / Intended</th>
+                    <th>One-Way Time (hrs)</th>
+                    <th>Cost per Person, One-Way (₹)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+
+        <h4>A4.2a Return Last-Mile Journey (Shrine → Base/Road-head)</h4>
+        <p class="field-helper">For each selected shrine, indicate whether your return from the shrine used the same mode and cost. Enter separate details only when it was different.</p>
+        <div id="lastMileReturnSection" class="last-mile-return-section"></div>
+
+        <h3>A5: Accommodation & Duration</h3>
+        <p>For each selected shrine, record your stay duration, accommodation, and approximate cost. For <span translate="no">Hemkund Sahib</span>, record accommodation at Ghangaria, the overnight base before or after the shrine visit.</p>
+        <table id="stayDurationTable">
+            <thead>
+                <tr>
+                    <th>Shrine / Stay location</th>
+                    <th>&lt;8 hrs (day visit)</th>
+                    <th>8–12 hrs</th>
+                    <th>12–18 hrs</th>
+                    <th>18–24 hrs</th>
+                    <th>&gt;24 hrs</th>
+                    <th>Accommodation Type</th>
+                    <th>Total Accommodation Cost (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+
+        <p class="field-helper" style="margin-top:12px;">Would you go on this pilgrimage again in the coming years?</p>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;margin:4px 0 12px 0;">
+          <label><input type="radio" name="intentToReturn" value="Yes" required> Yes</label>
+          <label><input type="radio" name="intentToReturn" value="No"> No</label>
+          <label><input type="radio" name="intentToReturn" value="Unsure"> Unsure</label>
+        </div>
+
+        <div class="nav-buttons">
+          <div style="float:left;">
+            <button type="button" onclick="nextPrev(-1)">Previous</button>
+          </div>
+          <div style="float:right;">
+            <button type="button" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+    </div>
+
+  <div class="form-page" id="page-3-C">
+    <p class="fatigue-progress" style="text-align:right;">Page 5 of 10 · ~5 min</p>
+    <h2 id="mainHaulChoiceTitle">Section B: Main-Haul Choice Experiment</h2>
+    <div class="project-brief" id="mainHaulProjectBrief">
+        <fieldset class="answer-question">
+          <legend>Awareness of railway improvements to the shrines:</legend><span class="field-helper">Had you heard about proposed or ongoing rail access improvements before this survey?</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="railwayAwareness" value="Yes, aware in detail" required><span>Yes, aware in detail</span></label>
+            <label class="answer-choice"><input type="radio" name="railwayAwareness" value="Yes, heard about them" required><span>Yes, heard about them</span></label>
+            <label class="answer-choice"><input type="radio" name="railwayAwareness" value="No, not aware" required><span>No, not aware</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="answer-question">
+          <legend>Used train for a hill destination before?</legend><span class="field-helper">Tell us if you have used rail travel for any hill or mountain trip.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="hillTrainExperience" value="Yes" required><span>Yes</span></label>
+            <label class="answer-choice"><input type="radio" name="hillTrainExperience" value="No" required><span>No</span></label>
+            <label class="answer-choice"><input type="radio" name="hillTrainExperience" value="Not sure" required><span>Not sure</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="answer-question">
+          <legend>How do you feel about using the new Rishikesh–Karnaprayag Railway for a future pilgrimage?</legend>
+          <span class="field-helper">Being built, expected around 2028. A feeder bus or taxi runs from Karnaprayag to the shrine base.</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="railwaySentiment" value="Very positive" required><span>Very positive</span></label>
+            <label class="answer-choice"><input type="radio" name="railwaySentiment" value="Somewhat positive" required><span>Somewhat positive</span></label>
+            <label class="answer-choice"><input type="radio" name="railwaySentiment" value="Neutral" required><span>Neutral</span></label>
+            <label class="answer-choice"><input type="radio" name="railwaySentiment" value="Somewhat negative" required><span>Somewhat negative</span></label>
+            <label class="answer-choice"><input type="radio" name="railwaySentiment" value="Very negative" required><span>Very negative</span></label>
+          </div>
+        </fieldset>
+
+<div id="mainHaulGeneralBrief">
+        <div class="hemkund-brief">
+          <h3>📋 Before you begin</h3>
+          <ul>
+            <li><b>Today:</b> most pilgrims go from Rishikesh / Haridwar to the shrine base by bus or taxi on long hill roads.</li>
+            <li><b>New option:</b> the <b>Rishikesh–Karnaprayag Railway</b> (125 km, expected around 2028), then a feeder bus or taxi to the shrine base. It does not serve Yamunotri or Gangotri, so those shrines have no railway cards.</li>
+            <li><b>Each card shows:</b> one-way cost per person and total time to the shrine base (including waiting and the feeder), plus comfort, reliability and vehicle changes.</li>
+            <li><b>Your task:</b> imagine the railway is already running. Pick the option you would actually choose.</li>
+          </ul>
+        </div>
+        </div>
+        <div class="hemkund-brief" id="mainHaulHemkundBrief" style="display:none;">
+          <h3>📋 Before you begin: <span translate="no">Hemkund Sahib</span></h3>
+          <ul>
+            <li><b>Today:</b> Rishikesh / Haridwar → Govindghat is a long hill-road journey by bus or taxi.</li>
+            <li><b>New option:</b> the <b>Rishikesh–Karnaprayag Railway</b> (125 km) is being built and is expected around 2028. You would take the train to Karnaprayag, then a feeder bus or taxi to Govindghat via Chamoli and Joshimath.</li>
+            <li><b>Each card shows:</b> one-way cost per person and total time from Rishikesh / Haridwar to Govindghat (including waiting and the feeder), plus comfort, reliability and number of vehicle changes.</li>
+            <li><b>Your task:</b> imagine the railway is already running. Pick the option you would actually choose. There are no right or wrong answers.</li>
+          </ul>
+        </div>
+
+    </div>
+    <p class="instruction" id="mainHaulNoChoiceNote" style="display:none;">
+        No railway choice cards are shown for selected shrines. Please continue.
+    </p>
+
+    <!-- attribute legend removed in v2 descriptions are now inline in each card -->
+    <div id="mainHaulAttributeLegend" style="display:none;"></div>
+
+    <div class="worked-example" id="mainHaulWorkedExample">
+        <h4>📖 Example card (not a real question)</h4>
+        <p style="margin:0 0 10px 0;font-size:0.9em;">Compare the three options and pick one. There are no right or wrong answers.</p>
+        <div class="dce-cards">
+            <div class="dce-card">
+                <div class="dce-card-header">🚌 State Bus</div>
+                <div class="dce-attr"><span class="dce-label">Cost</span><span class="dce-value dce-cost">₹400</span></div>
+                <div class="dce-attr"><span class="dce-label">Travel Time</span><span class="dce-value">8 hrs</span></div>
+                <div class="dce-attr"><span class="dce-label">Comfort</span><span class="dce-value dce-comfort-low"><strong>◔ Low</strong><br><small>Crowded, tiring</small></span></div>
+                <div class="dce-attr"><span class="dce-label">Reliability</span><span class="dce-value dce-comfort-med"><strong>~ Medium</strong><br><small>Minor delays possible</small></span></div>
+                <div class="dce-select-row" style="background:#eee;color:#888;">Example only not selectable</div>
+            </div>
+            <div class="dce-card">
+                <div class="dce-card-header">🚗 Shared Taxi</div>
+                <div class="dce-attr"><span class="dce-label">Cost</span><span class="dce-value dce-cost">₹900</span></div>
+                <div class="dce-attr"><span class="dce-label">Travel Time</span><span class="dce-value">6 hrs</span></div>
+                <div class="dce-attr"><span class="dce-label">Comfort</span><span class="dce-value dce-comfort-med"><strong>◑ Medium</strong><br><small>Adequate seating</small></span></div>
+                <div class="dce-attr"><span class="dce-label">Reliability</span><span class="dce-value dce-comfort-high"><strong>✓ High</strong><br><small>On time</small></span></div>
+                <div class="dce-select-row" style="background:#eee;color:#888;">Example only not selectable</div>
+            </div>
+            <div class="dce-card">
+                <div class="dce-card-header">🚆 Railway + Feeder Bus</div>
+                <div class="dce-attr"><span class="dce-label">Cost</span><span class="dce-value dce-cost">₹600</span></div>
+                <div class="dce-attr"><span class="dce-label">Travel Time</span><span class="dce-value">4.5 hrs</span></div>
+                <div class="dce-attr"><span class="dce-label">Comfort</span><span class="dce-value dce-comfort-high"><strong>● High</strong><br><small>Spacious, relaxed</small></span></div>
+                <div class="dce-attr"><span class="dce-label">Reliability</span><span class="dce-value dce-comfort-high"><strong>✓ High</strong><br><small>On time</small></span></div>
+                <div class="dce-select-row" style="background:#eee;color:#888;">Example only not selectable</div>
+            </div>
+        </div>
+        <p style="font-size:0.85em;margin:10px 0 0 0;color:#555;">👆 Faster and comfortable, or cheaper? Choose what matters to you.</p>
+    </div>
+    <p class="instruction" id="mainHaulChoiceInstruction">
+        Now answer the real tasks below. Choose one option per task.
+    </p>
+
+    <div class="section-card" id="mainHaulChoiceCard" style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <h3 class="text-2xl font-semibold mb-4" style="color: darkblue;">🚌 Section B1: Main-Haul Choice (Rishikesh/Haridwar → Base Camp / Shrine Destination)</h3>
+
+        <div class="dham-block" id="main-haul-Kedarnath-block" style="border-left: 5px solid #4e7c5f; background:#eef5f0; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Kedarnath: Rishikesh → Sonprayag</h4>
+            <div id="main-haul-Kedarnath-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="main-haul-Badrinath-block" style="border-left: 5px solid #3a6694; background:#eef2f8; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Badrinath: Rishikesh → Badrinath</h4>
+            <div id="main-haul-Badrinath-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="main-haul-Yamunotri-block" style="border-left: 5px solid #7a5c2e; background:#f7f2eb; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Yamunotri: Rishikesh → Janki Chatti</h4>
+            <div id="main-haul-Yamunotri-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="main-haul-Gangotri-block" style="border-left: 5px solid #4a5a7a; background:#f0f2f7; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Gangotri: Rishikesh → Gangotri</h4>
+            <div id="main-haul-Gangotri-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="main-haul-HemkundSahib-block" style="border-left: 5px solid #2e6b8a; background:#eaf3f7; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 <span translate="no">Hemkund Sahib</span>: Rishikesh → Govindghat</h4>
+            <div id="main-haul-HemkundSahib-tasks"></div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+      <div style="float:left;">
+        <button type="button" onclick="nextPrev(-1)">Previous</button>
+      </div>
+      <div style="float:right;">
+        <button type="button" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-page" id="page-4-C-last-mile">
+    <p class="fatigue-progress" style="text-align:right;">Page 6 of 10 · ~4 min</p>
+    <h2 id="lastMileChoiceTitle">Section C: Last-Mile Choice Experiment</h2>
+    <div class="project-brief" id="lastMileProjectBrief">
+        <fieldset class="answer-question">
+          <legend>Awareness of ropeway projects:</legend><span class="field-helper">Had you heard about proposed or ongoing ropeway projects before this survey?</span>
+          <div class="answer-buttons">
+            <label class="answer-choice"><input type="radio" name="ropewayAwareness" value="Yes, aware in detail" required><span>Yes, aware in detail</span></label>
+            <label class="answer-choice"><input type="radio" name="ropewayAwareness" value="Yes, heard about them" required><span>Yes, heard about them</span></label>
+            <label class="answer-choice"><input type="radio" name="ropewayAwareness" value="No, not aware" required><span>No, not aware</span></label>
+          </div>
+        </fieldset>
+
+<div id="lastMileGeneralContext">
+        <div class="hemkund-brief">
+          <h3>📋 Before you begin</h3>
+          <ul>
+            <li><b>Today:</b> from the base camp or road-head, pilgrims walk or use a pony, palki or porter (helicopter at some shrines).</li>
+            <li><b>New option:</b> ropeways are planned at Kedarnath (Sonprayag–Kedarnath), <span translate="no">Hemkund Sahib</span> (Govindghat–<span translate="no">Hemkund Sahib</span>) and Yamunotri. None is running yet. Badrinath and Gangotri are near the road-head, so they have no cards.</li>
+            <li><b>Each card shows:</b> one-way cost per person, one-way time, comfort (effort and shelter) and reliability (availability and wait).</li>
+            <li><b>Your task:</b> imagine the ropeway is running on your visit. Pick the option you would actually use.</li>
+          </ul>
+        </div>
+        </div>
+
+    </div>
+    <p class="instruction" id="lastMileNoChoiceNote" style="display:none;">
+        No last-mile cards are shown for selected shrines. Please continue.
+    </p>
+
+    <!-- attribute legend removed in v2 descriptions are now inline in each card -->
+    <div id="lastMileAttributeLegend" style="display:none;"></div>
+
+<div id="lastMileGeneralBrief"></div>
+    <div class="hemkund-brief" id="lastMileHemkundBrief" style="display:none;">
+      <h3>📋 Before you begin: <span translate="no">Hemkund Sahib</span></h3>
+      <ul>
+        <li><b>Today:</b> from Govindghat it is a steep climb of about 21 km to <span translate="no">Hemkund Sahib</span> (the road now reaches Pulna). Most pilgrims take two days with a night at Ghangaria, walking or using a pony, palki or pithu.</li>
+        <li><b>New option:</b> the <b>Govindghat–<span translate="no">Hemkund Sahib</span> Ropeway</b> (12.4 km) was approved by the Government of India in 2025 and is not yet running. It has two sections: Govindghat → Ghangaria and Ghangaria → <span translate="no">Hemkund Sahib</span>.</li>
+        <li><b>Each card shows:</b> one-way cost per person, one-way travel time, comfort (effort and shelter from weather) and reliability (whether it is available when you arrive, and the wait).</li>
+        <li><b>Your task:</b> imagine the ropeway is running on your visit. Pick the option you would actually use, given your health, group and budget.</li>
+      </ul>
+    </div>
+
+
+    <div class="worked-example" id="lastMileWorkedExample">
+        <h4>📖 Example card (not a real question)</h4>
+        <p style="margin:0 0 10px 0;font-size:0.9em;">Compare the three ways to reach the shrine and pick one.</p>
+        <div class="dce-cards">
+            <div class="dce-card">
+                <div class="dce-card-header">🥾 Trek / Walk</div>
+                <div class="dce-attr"><span class="dce-label">Cost</span><span class="dce-value dce-cost">₹0</span></div>
+                <div class="dce-attr"><span class="dce-label">Travel Time</span><span class="dce-value">8 hrs</span></div>
+                <div class="dce-attr"><span class="dce-label">Comfort</span><span class="dce-value dce-comfort-low"><strong>◔ Low</strong><br><small>Steep, exposed to weather</small></span></div>
+                <div class="dce-attr"><span class="dce-label">Reliability</span><span class="dce-value dce-comfort-med"><strong>~ Medium</strong><br><small>Short waits at times</small></span></div>
+                <div class="dce-select-row" style="background:#eee;color:#888;">Example only</div>
+            </div>
+            <div class="dce-card">
+                <div class="dce-card-header">🐴 Pony / Doli / Porter</div>
+                <div class="dce-attr"><span class="dce-label">Cost</span><span class="dce-value dce-cost">₹3,500</span></div>
+                <div class="dce-attr"><span class="dce-label">Travel Time</span><span class="dce-value">5 hrs</span></div>
+                <div class="dce-attr"><span class="dce-label">Comfort</span><span class="dce-value dce-comfort-med"><strong>◑ Medium</strong><br><small>Assisted ride, some effort</small></span></div>
+                <div class="dce-attr"><span class="dce-label">Reliability</span><span class="dce-value dce-comfort-med"><strong>~ Medium</strong><br><small>Short waits at times</small></span></div>
+                <div class="dce-select-row" style="background:#eee;color:#888;">Example only</div>
+            </div>
+            <div class="dce-card">
+                <div class="dce-card-header">🚡 Ropeway</div>
+                <div class="dce-attr"><span class="dce-label">Cost</span><span class="dce-value dce-cost">₹1,800</span></div>
+                <div class="dce-attr"><span class="dce-label">Travel Time</span><span class="dce-value">0.75 hrs</span></div>
+                <div class="dce-attr"><span class="dce-label">Comfort</span><span class="dce-value dce-comfort-high"><strong>● High</strong><br><small>Seated, sheltered cabin</small></span></div>
+                <div class="dce-attr"><span class="dce-label">Reliability</span><span class="dce-value dce-comfort-high"><strong>✓ High</strong><br><small>On schedule, little wait</small></span></div>
+                <div class="dce-select-row" style="background:#eee;color:#888;">Example only</div>
+            </div>
+        </div>
+        <p style="font-size:0.85em;margin:10px 0 0 0;color:#555;">👆 Choose what matters to you.</p>
+    </div>
+    <p class="instruction" id="lastMileChoiceInstruction">
+        Now answer the real tasks below. Choose one option per task.
+    </p>
+
+    <div class="section-card" id="lastMileChoiceCard" style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <h3 class="text-2xl font-semibold mb-4" style="color: darkblue;">Section C1: Last-Mile Choice (Base Camp → Temple)</h3>
+
+        <div class="dham-block" id="last-mile-Kedarnath-block" style="border-left: 5px solid #4e7c5f; background:#eef5f0; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Kedarnath: Sonprayag/Gaurikund → Temple (Approx. 16 km)</h4>
+            <div id="last-mile-Kedarnath-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="last-mile-Badrinath-block" style="border-left: 5px solid #3a6694; background:#eef2f8; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Badrinath: Badrinath Road-head → Temple (Near Road-head)</h4>
+            <div id="last-mile-Badrinath-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="last-mile-Yamunotri-block" style="border-left: 5px solid #7a5c2e; background:#f7f2eb; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Yamunotri: Barkot/Janki Chatti → Temple (Approx. 6 km)</h4>
+            <div id="last-mile-Yamunotri-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="last-mile-Gangotri-block" style="border-left: 5px solid #4a5a7a; background:#f0f2f7; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 Gangotri: Uttarkashi/Harsil → Temple (Near Road-head)</h4>
+            <div id="last-mile-Gangotri-tasks"></div>
+        </div>
+
+        <div class="dham-block" id="last-mile-HemkundSahib-block" style="border-left: 5px solid #2e6b8a; background:#eaf3f7; display: none;">
+            <h4 class="text-xl font-semibold mb-3">📍 <span translate="no">Hemkund Sahib</span>: Govindghat → <span translate="no">Hemkund Sahib</span> (about 21 km)</h4>
+            <div id="last-mile-HemkundSahib-tasks"></div>
+        </div>
+    </div>
+
+    <div id="integratedServicePreferences" style="display:none;">
+    <!-- C2 removed: integrated service questions moved to Section D. -->
+
+    <select name="integratedNoReason" style="display:none;">
+        <option value="">removed</option>
+      </select>
+
+    <p style="display:none;">Most important factors for integrated services (rank 1–5, where 1 = Not Important, 5 = Very Important):</p>
+    <table class="likert-scale" style="display:none;">
+        <thead>
+            <tr>
+                <th>Factor</th>
+                <th>1 (Not Important)</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5 (Very Important)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Time Efficiency</td>
+                <td><input type="radio" name="integratedTime" value="1"></td>
+                <td><input type="radio" name="integratedTime" value="2"></td>
+                <td><input type="radio" name="integratedTime" value="3"></td>
+                <td><input type="radio" name="integratedTime" value="4"></td>
+                <td><input type="radio" name="integratedTime" value="5"></td>
+            </tr>
+            <tr>
+                <td>Cost Effectiveness</td>
+                <td><input type="radio" name="integratedCost" value="1"></td>
+                <td><input type="radio" name="integratedCost" value="2"></td>
+                <td><input type="radio" name="integratedCost" value="3"></td>
+                <td><input type="radio" name="integratedCost" value="4"></td>
+                <td><input type="radio" name="integratedCost" value="5"></td>
+            </tr>
+            <tr>
+                <td>Comfort</td>
+                <td><input type="radio" name="integratedComfort" value="1"></td>
+                <td><input type="radio" name="integratedComfort" value="2"></td>
+                <td><input type="radio" name="integratedComfort" value="3"></td>
+                <td><input type="radio" name="integratedComfort" value="4"></td>
+                <td><input type="radio" name="integratedComfort" value="5"></td>
+            </tr>
+            <tr>
+                <td>Reliability</td>
+                <td><input type="radio" name="integratedReliability" value="1"></td>
+                <td><input type="radio" name="integratedReliability" value="2"></td>
+                <td><input type="radio" name="integratedReliability" value="3"></td>
+                <td><input type="radio" name="integratedReliability" value="4"></td>
+                <td><input type="radio" name="integratedReliability" value="5"></td>
+            </tr>
+            <tr>
+                <td>Safety</td>
+                <td><input type="radio" name="integratedSafety" value="1"></td>
+                <td><input type="radio" name="integratedSafety" value="2"></td>
+                <td><input type="radio" name="integratedSafety" value="3"></td>
+                <td><input type="radio" name="integratedSafety" value="4"></td>
+                <td><input type="radio" name="integratedSafety" value="5"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="nav-buttons">
+      <div style="float:left;">
+        <button type="button" onclick="nextPrev(-1)">Previous</button>
+      </div>
+      <div style="float:right;">
+        <button type="button" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-page" id="page-5-acceptance">
+    <p class="fatigue-progress" style="text-align:right;">Page 7 of 10 ? ~2 min</p>
+    <h2>Railway &amp; Aerial Ropeway Acceptance</h2>
+    <!-- Gate question for rail block -->
+    <div class="gate-question gate-question--rail">
+      <p class="gate-question-label">🚆 <strong>Rishikesh–Karnaprayag Railway</strong></p>
+      <p class="field-helper">This railway is under construction and expected to open around 2027–28, reaching Karnaprayag. Would you consider using it for a future pilgrimage?</p>
+      <div class="gate-options">
+        <label class="gate-opt"><input type="radio" name="railGate" value="yes" required> Yes, I would use it</label>
+        <label class="gate-opt"><input type="radio" name="railGate" value="maybe"> Maybe, depending on cost and schedule</label>
+        <label class="gate-opt"><input type="radio" name="railGate" value="no"> No, I would not use it</label>
+      </div>
+      <div id="railNoReasonBlock" style="display:none;margin-top:12px;background:#fdf6ec;border-left:3px solid #c97d2a;border-radius:4px;padding:12px 14px;">
+        <p style="margin:0 0 8px 0;font-weight:600;">Why would you not use the railway? <span style="font-weight:400;color:#666;">(Select all that apply)</span></p>
+        <div class="checkbox-option-grid">
+          <label class="checkbox-option"><input type="checkbox" name="railNoReason" value="extra_transfers"><span>Need to change vehicles between the train and the shrine</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="railNoReason" value="station_access"><span>Getting to the railway station is difficult for me</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="railNoReason" value="luggage_difficulty"><span>Carrying luggage during boarding and transfers is difficult</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="railNoReason" value="vehicle_continuity"><span>Our group already has a vehicle for the whole journey</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="railNoReason" value="other"><span>Other</span></label>
+        </div>
+        <div id="railNoReasonOther" style="display:none;margin-top:8px;">
+          <input type="text" name="railNoReasonOtherText" placeholder="Please specify…" style="width:100%;max-width:420px;padding:6px 8px;border:1px solid #ccc;border-radius:4px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- D3 / D3a / D3b: Rail block (shown only when gate is yes/maybe) -->
+    <div class="mode-block mode-block--rail" id="railModeBlock" style="display:none;">
+      <div class="mode-block-header">🚆 Railway: Detailed Questions</div>
+
+    <h3>D2: Rail Connectivity Acceptance</h3>
+    <p class="field-helper">1 = strongly disagree, 5 = strongly agree.</p>
+    <table class="likert-scale">
+      <thead><tr><th>Statement</th><th>1<br><small style="font-weight:normal;">Strongly<br>Disagree</small></th><th>2<br><small style="font-weight:normal;">Disagree</small></th><th>3<br><small style="font-weight:normal;">Neutral</small></th><th>4<br><small style="font-weight:normal;">Agree</small></th><th>5<br><small style="font-weight:normal;">Strongly<br>Agree</small></th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Rail travel would significantly reduce my stress on the pilgrimage journey.</td>
+          <td><input type="radio" name="railStress" value="1" required></td><td><input type="radio" name="railStress" value="2"></td><td><input type="radio" name="railStress" value="3"></td><td><input type="radio" name="railStress" value="4"></td><td><input type="radio" name="railStress" value="5"></td>
+        </tr>
+        <tr>
+          <td>I prefer the flexibility of road travel (depart anytime) over a fixed rail timetable.</td>
+          <td><input type="radio" name="railFlexibility" value="1" required></td><td><input type="radio" name="railFlexibility" value="2"></td><td><input type="radio" name="railFlexibility" value="3"></td><td><input type="radio" name="railFlexibility" value="4"></td><td><input type="radio" name="railFlexibility" value="5"></td>
+        </tr>
+        <tr>
+          <td>Rail would make the shrines accessible to pilgrims who cannot afford taxis or tour packages.</td>
+          <td><input type="radio" name="railAccessibility" value="1" required></td><td><input type="radio" name="railAccessibility" value="2"></td><td><input type="radio" name="railAccessibility" value="3"></td><td><input type="radio" name="railAccessibility" value="4"></td><td><input type="radio" name="railAccessibility" value="5"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- D3a: Integrated ticket question (moved from after D2b) -->
+    <h3>D2a: Integrated Ticketing</h3>
+    <label>Would you use a single integrated service (train + feeder bus + ropeway) if available as one connected ticket?
+      <span class="field-helper">Rather than booking each leg separately: one ticket, one booking, seamless connection.</span>
+      <select name="integratedUse">
+        <option value="">--Select--</option>
+        <option>Yes, definitely</option>
+        <option>Yes, if priced reasonably</option>
+        <option>Not sure</option>
+        <option>No, I prefer booking each part myself</option>
+      </select>
+    </label>
+
+    <!-- D3b: Waiting time tolerance (old D6, fits here with rail/transfer context) -->
+    <h3>D2b: Waiting Time Tolerance at Rail Transfer</h3>
+    <p class="field-helper">Imagine you have arrived at Karnaprayag by train and need to board a feeder bus or shared taxi to continue to your shrine. How long would you be willing to wait at the terminus for the next available feeder service before you would prefer to arrange your own transport instead?</p>
+    <label>Maximum wait I would accept for a feeder service:
+      <select name="maxAcceptableWait" required>
+        <option value="">--Select--</option>
+        <option>Less than 15 minutes</option>
+        <option>15–30 minutes</option>
+        <option>30–60 minutes</option>
+        <option>More than 60 minutes</option>
+        <option>I would pre-book the feeder and not wait at all</option>
+      </select>
+    </label>
+
+    <!-- D2c: Cost threshold for "maybe" respondents -->
+    <div id="railMaybeBlock" style="display:none;">
+    <h3>D2c: Willingness to Pay for Railway</h3>
+    <label>What is the maximum one-way fare you would be willing to pay for the Rishikesh → Karnaprayag railway?
+      <span class="field-helper">Compared to a shared taxi/bus for the same route.</span>
+      <select name="railMaxFare">
+        <option value="">--Select--</option>
+        <option value="Under 200">Under ₹200</option>
+        <option value="200-400">₹200 – ₹400</option>
+        <option value="400-600">₹400 – ₹600</option>
+        <option value="600-1000">₹600 – ₹1,000</option>
+        <option value="Over 1000">Over ₹1,000</option>
+        <option value="No limit if convenient">Price does not matter if it is convenient</option>
+      </select>
+    </label>
+    </div>
+
+    </div><!-- end rail block -->
+
+    <hr style="margin:24px 0 16px 0;border:1px solid #d0e8d0;">
+    <!-- Gate question for ropeway block -->
+    <div class="gate-question gate-question--ropeway">
+      <p class="gate-question-label">🚡 <strong>Aerial Ropeway (Gondola / Cable Car)</strong></p>
+      <p class="field-helper" id="ropewayGateHelper">Ropeways are proposed at Kedarnath, <span translate="no">Hemkund Sahib</span>, and Yamunotri under the National Ropeways Development Programme. Are you open to using one to reach the shrine if it were available?</p>
+      <div class="gate-options">
+        <label class="gate-opt"><input type="radio" name="ropewayGate" value="yes" required> Yes, I would use it</label>
+        <label class="gate-opt"><input type="radio" name="ropewayGate" value="maybe"> Maybe, depending on cost and conditions</label>
+        <label class="gate-opt"><input type="radio" name="ropewayGate" value="no"> No, I would not use it</label>
+      </div>
+      <div id="ropewayNoReasonBlock" style="display:none;margin-top:12px;background:#fdf6ec;border-left:3px solid #c97d2a;border-radius:4px;padding:12px 14px;">
+        <p style="margin:0 0 8px 0;font-weight:600;">Why would you not use the ropeway? <span style="font-weight:400;color:#666;">(Select all that apply)</span></p>
+        <div class="checkbox-option-grid">
+          <label class="checkbox-option"><input type="checkbox" name="ropewayNoReason" value="spiritual_belief"><span>Spiritual belief (the trek itself is part of the pilgrimage)</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="ropewayNoReason" value="fear_heights"><span>Fear of heights / acrophobia</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="ropewayNoReason" value="safety_concerns"><span>Safety concerns about ropeway technology</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="ropewayNoReason" value="prefer_trek"><span>Prefer the physical experience of trekking</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="ropewayNoReason" value="cost"><span>Likely too expensive</span></label>
+          <label class="checkbox-option"><input type="checkbox" name="ropewayNoReason" value="other"><span>Other</span></label>
+        </div>
+        <div id="ropewayNoReasonOther" style="display:none;margin-top:8px;">
+          <input type="text" name="ropewayNoReasonOtherText" placeholder="Please specify…" style="width:100%;max-width:420px;padding:6px 8px;border:1px solid #ccc;border-radius:4px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- D2 / D2a / D2b: Ropeway block (shown only when gate is yes/maybe) -->
+    <div class="mode-block mode-block--ropeway" id="ropewayModeBlock" style="display:none;">
+      <div class="mode-block-header">🚡 Aerial Ropeway: Detailed Questions</div>
+
+    <h3>D3: Ropeway Acceptance</h3>
+    <p class="field-helper">1 = strongly disagree, 5 = strongly agree.</p>
+    <table class="likert-scale">
+      <thead><tr><th>Statement</th><th>1<br><small style="font-weight:normal;">Strongly<br>Disagree</small></th><th>2<br><small style="font-weight:normal;">Disagree</small></th><th>3<br><small style="font-weight:normal;">Neutral</small></th><th>4<br><small style="font-weight:normal;">Agree</small></th><th>5<br><small style="font-weight:normal;">Strongly<br>Agree</small></th></tr></thead>
+      <tbody>
+        <tr>
+          <td>I would prefer ropeway over trekking even if it costs more.</td>
+          <td><input type="radio" name="ropewayCostPreference" value="1" required></td><td><input type="radio" name="ropewayCostPreference" value="2"></td><td><input type="radio" name="ropewayCostPreference" value="3"></td><td><input type="radio" name="ropewayCostPreference" value="4"></td><td><input type="radio" name="ropewayCostPreference" value="5"></td>
+        </tr>
+        <tr>
+          <td>Ropeway is a safer option for elderly and physically limited pilgrims.</td>
+          <td><input type="radio" name="ropewaySafety" value="1" required></td><td><input type="radio" name="ropewaySafety" value="2"></td><td><input type="radio" name="ropewaySafety" value="3"></td><td><input type="radio" name="ropewaySafety" value="4"></td><td><input type="radio" name="ropewaySafety" value="5"></td>
+        </tr>
+        <tr>
+          <td>Government should subsidise ropeway fares for pilgrims.</td>
+          <td><input type="radio" name="ropewaySubsidy" value="1" required></td><td><input type="radio" name="ropewaySubsidy" value="2"></td><td><input type="radio" name="ropewaySubsidy" value="3"></td><td><input type="radio" name="ropewaySubsidy" value="4"></td><td><input type="radio" name="ropewaySubsidy" value="5"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- D2a: WTP for Ropeway (old D3a) -->
+    <h3>D3a: Willingness to Pay for Ropeway</h3>
+    <p class="field-helper" id="wtpRopewayQuestion">What is the maximum amount per person you would be willing to pay for ropeway at Kedarnath (one-way)?</p>
+    <input type="hidden" name="wtpRopewayShrine" id="wtpRopewayShrine" value="Kedarnath">
+    <select name="wtpRopewayKedarnath" required>
+      <option value="">--Select--</option>
+      <option>I would not use ropeway</option>
+      <option>₹1,000–₹2,000</option>
+      <option>₹2,000–₹3,000</option>
+      <option>₹3,000–₹4,000</option>
+      <option>₹4,000–₹5,000</option>
+      <option>₹5,000–₹6,000</option>
+      <option>Above ₹6,000</option>
+      <option>Prefer not to say</option>
+    </select>
+
+    <!-- D2b: Ropeway drivers (old D3b) -->
+    <h3>D3b: What Would Drive You to Choose Ropeway?</h3>
+    <p class="field-helper">Select <strong>all factors</strong> that would make you prefer ropeway over trekking or traditional modes at the shrine:</p>
+    <div class="checkbox-option-grid">
+      <label class="checkbox-option"><input type="checkbox" name="ropewayDriver" value="time_saving"><span>Saves significant travel time</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="ropewayDriver" value="physical_difficulty"><span>Avoids physical difficulty of trek</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="ropewayDriver" value="safety"><span>Feels safer than trek / mountain path</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="ropewayDriver" value="cost"><span>If cost is affordable or subsidised</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="ropewayDriver" value="elderly_disabled"><span>Travelling with elderly or persons with disability</span></label>
+    </div>
+
+
+</div><!-- end ropeway block -->
+
+    <div class="nav-buttons">
+      <div style="float:left;">
+        <button type="button" onclick="nextPrev(-1)">Previous</button>
+      </div>
+      <div style="float:right;">
+        <button type="button" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-page" id="page-5-D">
+    <p class="fatigue-progress" style="text-align:right;">Page 8 of 10 · ~3 min</p>
+    <h2>Section D: Travel Priorities &amp; Preferences</h2>
+
+    <!-- D0: Transport priorities -->
+    <h3>D0: What Matters to You When Choosing Transport?</h3>
+    <p class="field-helper">Think about this pilgrimage journey specifically. How important is each factor when deciding how to travel to or from the shrine? 1 = not important at all, 5 = very important.</p>
+    <div class="priority-ratings" id="transportPrioritiesRatings">
+      <fieldset class="priority-rating">
+        <legend>Total Travel Time</legend>
+        <p class="field-helper" id="priority-description-0">How important is reaching the shrine quickly, including waiting and transfer time?</p>
+        <div class="priority-rating-options">
+          <label class="answer-choice"><input type="radio" name="priorityTime" value="1" required aria-label="1 ? Not important at all" aria-describedby="priority-description-0"><span>1</span><small class="priority-rating-caption">Not important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityTime" value="2" required aria-label="2 ? Slightly important" aria-describedby="priority-description-0"><span>2</span><small class="priority-rating-caption">Slightly important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityTime" value="3" required aria-label="3 ? Moderately important" aria-describedby="priority-description-0"><span>3</span><small class="priority-rating-caption">Moderately important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityTime" value="4" required aria-label="4 ? Important" aria-describedby="priority-description-0"><span>4</span><small class="priority-rating-caption">Important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityTime" value="5" required aria-label="5 ? Very important" aria-describedby="priority-description-0"><span>5</span><small class="priority-rating-caption">Very important</small></label>
+        </div>
+      </fieldset>
+      <fieldset class="priority-rating">
+        <legend>Total Transport Cost</legend>
+        <p class="field-helper" id="priority-description-1">How important is keeping your total transport cost low?</p>
+        <div class="priority-rating-options">
+          <label class="answer-choice"><input type="radio" name="priorityCost" value="1" required aria-label="1 ? Not important at all" aria-describedby="priority-description-1"><span>1</span><small class="priority-rating-caption">Not important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityCost" value="2" required aria-label="2 ? Slightly important" aria-describedby="priority-description-1"><span>2</span><small class="priority-rating-caption">Slightly important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityCost" value="3" required aria-label="3 ? Moderately important" aria-describedby="priority-description-1"><span>3</span><small class="priority-rating-caption">Moderately important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityCost" value="4" required aria-label="4 ? Important" aria-describedby="priority-description-1"><span>4</span><small class="priority-rating-caption">Important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityCost" value="5" required aria-label="5 ? Very important" aria-describedby="priority-description-1"><span>5</span><small class="priority-rating-caption">Very important</small></label>
+        </div>
+      </fieldset>
+      <fieldset class="priority-rating">
+        <legend>Safety During the Journey</legend>
+        <p class="field-helper" id="priority-description-2">How important is travelling safely, considering the vehicle and route?</p>
+        <div class="priority-rating-options">
+          <label class="answer-choice"><input type="radio" name="prioritySafety" value="1" required aria-label="1 ? Not important at all" aria-describedby="priority-description-2"><span>1</span><small class="priority-rating-caption">Not important</small></label>
+          <label class="answer-choice"><input type="radio" name="prioritySafety" value="2" required aria-label="2 ? Slightly important" aria-describedby="priority-description-2"><span>2</span><small class="priority-rating-caption">Slightly important</small></label>
+          <label class="answer-choice"><input type="radio" name="prioritySafety" value="3" required aria-label="3 ? Moderately important" aria-describedby="priority-description-2"><span>3</span><small class="priority-rating-caption">Moderately important</small></label>
+          <label class="answer-choice"><input type="radio" name="prioritySafety" value="4" required aria-label="4 ? Important" aria-describedby="priority-description-2"><span>4</span><small class="priority-rating-caption">Important</small></label>
+          <label class="answer-choice"><input type="radio" name="prioritySafety" value="5" required aria-label="5 ? Very important" aria-describedby="priority-description-2"><span>5</span><small class="priority-rating-caption">Very important</small></label>
+        </div>
+      </fieldset>
+      <fieldset class="priority-rating">
+        <legend>Travel Comfort</legend>
+        <p class="field-helper" id="priority-description-3">How important is a comfortable journey with clean seating and less physical strain?</p>
+        <div class="priority-rating-options">
+          <label class="answer-choice"><input type="radio" name="priorityComfort" value="1" required aria-label="1 ? Not important at all" aria-describedby="priority-description-3"><span>1</span><small class="priority-rating-caption">Not important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityComfort" value="2" required aria-label="2 ? Slightly important" aria-describedby="priority-description-3"><span>2</span><small class="priority-rating-caption">Slightly important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityComfort" value="3" required aria-label="3 ? Moderately important" aria-describedby="priority-description-3"><span>3</span><small class="priority-rating-caption">Moderately important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityComfort" value="4" required aria-label="4 ? Important" aria-describedby="priority-description-3"><span>4</span><small class="priority-rating-caption">Important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityComfort" value="5" required aria-label="5 ? Very important" aria-describedby="priority-description-3"><span>5</span><small class="priority-rating-caption">Very important</small></label>
+        </div>
+      </fieldset>
+      <fieldset class="priority-rating">
+        <legend>Reliability of the Service</legend>
+        <p class="field-helper" id="priority-description-4">How important is a service that runs on time with few delays or cancellations?</p>
+        <div class="priority-rating-options">
+          <label class="answer-choice"><input type="radio" name="priorityReliability" value="1" required aria-label="1 ? Not important at all" aria-describedby="priority-description-4"><span>1</span><small class="priority-rating-caption">Not important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityReliability" value="2" required aria-label="2 ? Slightly important" aria-describedby="priority-description-4"><span>2</span><small class="priority-rating-caption">Slightly important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityReliability" value="3" required aria-label="3 ? Moderately important" aria-describedby="priority-description-4"><span>3</span><small class="priority-rating-caption">Moderately important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityReliability" value="4" required aria-label="4 ? Important" aria-describedby="priority-description-4"><span>4</span><small class="priority-rating-caption">Important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityReliability" value="5" required aria-label="5 ? Very important" aria-describedby="priority-description-4"><span>5</span><small class="priority-rating-caption">Very important</small></label>
+        </div>
+      </fieldset>
+      <fieldset class="priority-rating">
+        <legend>Ease of Booking and Transfers</legend>
+        <p class="field-helper" id="priority-description-5">How important are easy booking, fewer vehicle changes, and convenient pickup and drop-off?</p>
+        <div class="priority-rating-options">
+          <label class="answer-choice"><input type="radio" name="priorityConvenience" value="1" required aria-label="1 ? Not important at all" aria-describedby="priority-description-5"><span>1</span><small class="priority-rating-caption">Not important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityConvenience" value="2" required aria-label="2 ? Slightly important" aria-describedby="priority-description-5"><span>2</span><small class="priority-rating-caption">Slightly important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityConvenience" value="3" required aria-label="3 ? Moderately important" aria-describedby="priority-description-5"><span>3</span><small class="priority-rating-caption">Moderately important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityConvenience" value="4" required aria-label="4 ? Important" aria-describedby="priority-description-5"><span>4</span><small class="priority-rating-caption">Important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityConvenience" value="5" required aria-label="5 ? Very important" aria-describedby="priority-description-5"><span>5</span><small class="priority-rating-caption">Very important</small></label>
+        </div>
+      </fieldset>
+      <fieldset class="priority-rating">
+        <legend>Accessibility for Elderly Pilgrims and People with Disabilities</legend>
+        <p class="field-helper" id="priority-description-6">How important is easy boarding and travel for elderly pilgrims or people with disabilities in your group?</p>
+        <div class="priority-rating-options">
+          <label class="answer-choice"><input type="radio" name="priorityAccessibility" value="1" required aria-label="1 ? Not important at all" aria-describedby="priority-description-6"><span>1</span><small class="priority-rating-caption">Not important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityAccessibility" value="2" required aria-label="2 ? Slightly important" aria-describedby="priority-description-6"><span>2</span><small class="priority-rating-caption">Slightly important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityAccessibility" value="3" required aria-label="3 ? Moderately important" aria-describedby="priority-description-6"><span>3</span><small class="priority-rating-caption">Moderately important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityAccessibility" value="4" required aria-label="4 ? Important" aria-describedby="priority-description-6"><span>4</span><small class="priority-rating-caption">Important</small></label>
+          <label class="answer-choice"><input type="radio" name="priorityAccessibility" value="5" required aria-label="5 ? Very important" aria-describedby="priority-description-6"><span>5</span><small class="priority-rating-caption">Very important</small></label>
+        </div>
+      </fieldset>
+    </div>
+
+
+    <div class="nav-buttons">
+      <div style="float:left;">
+        <button type="button" onclick="nextPrev(-1)">Previous</button>
+      </div>
+      <div style="float:right;">
+        <button type="button" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-page" id="page-6-F">
+    <p class="fatigue-progress" style="text-align:right;">Page 10 of 10 · ~1 min</p>
+    <h2>Section F: Feedback & Suggestions</h2>
+
+    <label>Overall trip rating:
+      <span class="field-helper">Considering everything (temples, transport, facilities) how would you rate this pilgrimage overall?</span>
+    </label>
+    <div class="trip-slider-wrap">
+      <div class="trip-slider-val-row">
+        <strong id="tripRatingVal" class="trip-slider-val empty">Move the slider to rate</strong>
+      </div>
+      <div class="trip-slider-row">
+        <span class="trip-slider-edge">1</span>
+        <input type="range" name="overallTripRating" id="tripRatingSlider" min="1" max="10" step="1"
+               oninput="updateTripSlider(this)" required>
+        <span class="trip-slider-edge">10</span>
+      </div>
+      <div class="trip-slider-ticks">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+      </div>
+      <div class="trip-slider-labels">
+        <span>😞 Very Poor</span>
+        <span>😐 Average</span>
+        <span>😊 Excellent</span>
+      </div>
+    </div>
+    <script>
+    var _tripSliderLabels = ['','😞 Very Poor','😞 Very Poor','😟 Poor','😕 Below Average','😐 Average','🙂 Above Average','🙂 Good','😊 Good','😄 Excellent','😄 Excellent'];
+    function updateTripSlider(el){
+      var v = parseInt(el.value);
+      var badge = document.getElementById('tripRatingVal');
+      badge.textContent = v + ' / 10  –  ' + _tripSliderLabels[v];
+      badge.classList.remove('empty');
+    }
+    </script>
+
+    <label>Travel challenges (select all that apply):
+      <span class="field-helper">Select the problems you faced or expect during the journey to/from the shrines.</span>
+    </label>
+    <div class="checkbox-option-grid">
+      <label class="checkbox-option"><input type="checkbox" name="challenge" value="Long Waiting Time"><span>Long waiting time at terminals or checkpoints</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="challenge" value="Landslides Blockage"><span>Landslides or road blockages causing delays</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="challenge" value="Weather Dependency"><span>Transport delays or cancellations due to rain, fog, or snow</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="challenge" value="Overcrowding"><span>Overcrowding on vehicles or at shrine approach points</span></label>
+      <label class="checkbox-option"><input type="checkbox" name="challenge" value="No Accessibility"><span>Difficulty finding suitable transport for elderly pilgrims or people with disabilities</span></label>
+      <label class="checkbox-option checkbox-option--none"><input type="checkbox" name="challenge" value="Other"><span>Other</span></label>
+    </div>
+
+    <label>Main challenges and suggestions:
+      <span class="field-helper">Describe the biggest problem you faced and any ideas to improve transport, facilities, or information for future pilgrims.</span>
+      <textarea name="feedbackChallenge" rows="4" placeholder="e.g., Long queues at Gaurikund, overcrowded shared jeeps, poor signage at Sonprayag..."></textarea>
+    </label>
+
+    <label>Any other comments (optional):
+      <span class="field-helper">Add anything else about the temples, route, ropeway, rail project, or your overall experience.</span>
+      <textarea name="feedbackOther" rows="3"></textarea>
+    </label>
+
+    <div class="nav-buttons">
+      <div style="float:left;">
+        <button type="button" onclick="nextPrev(-1)">Previous</button>
+      </div>
+      <div style="float:right;">
+        <button type="button" onclick="nextPrev(1)" id="submitBtn">Submit Response</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-page" id="page-7-thankyou" style="text-align: center;">
+    <h2 style="color: #245b8a;">Thank You! 🙏</h2>
+    <img src="images/2.jpeg" alt="Pilgrimage Travel Survey" style="max-width:100%; height:auto; border-radius:10px; max-height: 200px; margin: 20px auto; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <p id="devotionalText">आपकी यात्रा मंगलमय हो</p>
+    <p style="margin-top: 30px;">Your response has been saved and is invaluable to our research.</p>
+    <div class="nav-buttons">
+      <div style="float:right;">
+        <button type="button" onclick="startNewResponse()">Submit Another Response</button>
+      </div>
+    </div>
+  </div>
+
+  </form>
+
+  <h2>Saved Responses (Local)</h2>
+  <div class="local-response-actions">
+    <button type="button" id="selectAllLocalResponses">Select All</button>
+    <button type="button" id="deleteSelectedLocalResponses">Delete Selected</button>
+    <button type="button" id="deleteAllLocalResponses">Delete All Local Responses</button>
+  </div>
+  <table id="responseTable">
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Origin</th>
+        <th>Occupation</th>
+        <th>Income</th>
+        <th>Education</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button id="exportCSV">Export CSV</button>
+  <button id="exportXLSX">Export Excel</button>
+
+  <script src="script.js?v=20261001-5"></script>
+
+<script src="../fill-section.js"></script><script src="../survey-bridge.js"></script></body>
+</html>

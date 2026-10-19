@@ -1,0 +1,343 @@
+[
+  {
+    "id": "data-01",
+    "label": "Hemkund Sahib · own car",
+    "description": "Group · 15-24 · 19 source records",
+    "shrines": [
+      "Hemkund Sahib"
+    ],
+    "empiricalDonor": "observed-026",
+    "support": 19,
+    "answers": {
+      "age": "15-24",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "5",
+      "tripStatus": "Ongoing",
+      "startPoint": "Other",
+      "otherStartPoint": "Ludhiana",
+      "occupation": "Student",
+      "originStateUT": "Punjab"
+    }
+  },
+  {
+    "id": "data-02",
+    "label": "Hemkund Sahib · tour bus",
+    "description": "Group · 15-24 · 19 source records",
+    "shrines": [
+      "Hemkund Sahib"
+    ],
+    "empiricalDonor": "observed-043",
+    "support": 19,
+    "answers": {
+      "age": "15-24",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "6",
+      "tripStatus": "Ongoing",
+      "startPoint": "Rishikesh",
+      "occupation": "Student",
+      "originStateUT": "Punjab"
+    }
+  },
+  {
+    "id": "data-03",
+    "label": "Hemkund Sahib · shared taxi",
+    "description": "Solo · 25-34 · 10 source records",
+    "shrines": [
+      "Hemkund Sahib",
+      "Badrinath"
+    ],
+    "empiricalDonor": "observed-058",
+    "support": 10,
+    "answers": {
+      "age": "25-34",
+      "gender": "Female",
+      "travelType": "Solo",
+      "groupSize": "1",
+      "tripStatus": "Completed",
+      "startPoint": "Other",
+      "otherStartPoint": "Delhi",
+      "occupation": "Private Employee",
+      "originStateUT": "Delhi (NCT)"
+    }
+  },
+  {
+    "id": "data-04",
+    "label": "Kedarnath · public bus",
+    "description": "Solo · 45-54 · 9 source records",
+    "shrines": [
+      "Kedarnath"
+    ],
+    "empiricalDonor": "observed-009",
+    "support": 9,
+    "answers": {
+      "age": "45-54",
+      "gender": "Female",
+      "travelType": "Solo",
+      "groupSize": "1",
+      "tripStatus": "Completed",
+      "startPoint": "Rishikesh",
+      "occupation": "Business/Self Employed",
+      "originStateUT": "Kerala"
+    }
+  },
+  {
+    "id": "data-05",
+    "label": "Kedarnath · own car",
+    "description": "Group · 25-34 · 8 source records",
+    "shrines": [
+      "Kedarnath",
+      "Badrinath"
+    ],
+    "empiricalDonor": "observed-104",
+    "support": 8,
+    "answers": {
+      "age": "25-34",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "5",
+      "tripStatus": "Ongoing",
+      "startPoint": "Haridwar",
+      "occupation": "Business/Self Employed",
+      "originStateUT": "Punjab"
+    }
+  },
+  {
+    "id": "data-06",
+    "label": "Gangotri · tour bus",
+    "description": "Group · 45-54 · 5 source records",
+    "shrines": [
+      "Gangotri",
+      "Yamunotri",
+      "Kedarnath",
+      "Badrinath"
+    ],
+    "empiricalDonor": "observed-107",
+    "support": 5,
+    "answers": {
+      "age": "45-54",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "6",
+      "tripStatus": "Ongoing",
+      "startPoint": "Rishikesh",
+      "occupation": "Business/Self Employed",
+      "originStateUT": "Gujarat"
+    }
+  },
+  {
+    "id": "data-07",
+    "label": "Kedarnath · tour bus",
+    "description": "Solo · 25-34 · 5 source records",
+    "shrines": [
+      "Kedarnath",
+      "Badrinath",
+      "Yamunotri",
+      "Gangotri",
+      "Hemkund Sahib"
+    ],
+    "empiricalDonor": "observed-064",
+    "support": 5,
+    "answers": {
+      "age": "25-34",
+      "gender": "Prefer not to say",
+      "travelType": "Solo",
+      "groupSize": "1",
+      "tripStatus": "Completed",
+      "startPoint": "Haridwar",
+      "occupation": "Government Employee",
+      "originStateUT": "Delhi (NCT)"
+    }
+  },
+  {
+    "id": "data-08",
+    "label": "Kedarnath · hired taxi",
+    "description": "Group · 25-34 · 4 source records",
+    "shrines": [
+      "Kedarnath"
+    ],
+    "empiricalDonor": "observed-030",
+    "support": 4,
+    "answers": {
+      "age": "25-34",
+      "gender": "Female",
+      "travelType": "Group",
+      "groupSize": "6",
+      "tripStatus": "Completed",
+      "startPoint": "Haridwar",
+      "occupation": "Government Employee",
+      "originStateUT": "Uttarakhand"
+    }
+  },
+  {
+    "id": "data-09",
+    "label": "Yamunotri · hired taxi",
+    "description": "Group · 25-34 · 4 source records",
+    "shrines": [
+      "Yamunotri",
+      "Gangotri",
+      "Kedarnath",
+      "Badrinath"
+    ],
+    "empiricalDonor": "observed-093",
+    "support": 4,
+    "answers": {
+      "age": "25-34",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "7",
+      "tripStatus": "Ongoing",
+      "startPoint": "Haridwar",
+      "occupation": "Private Employee",
+      "originStateUT": "Maharashtra"
+    }
+  },
+  {
+    "id": "data-10",
+    "label": "Hemkund Sahib · public bus",
+    "description": "Group · 65 and above · 3 source records",
+    "shrines": [
+      "Hemkund Sahib"
+    ],
+    "empiricalDonor": "observed-022",
+    "support": 3,
+    "answers": {
+      "age": "65 and above",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "5",
+      "tripStatus": "Ongoing",
+      "startPoint": "Rishikesh",
+      "occupation": "Prefer not to say",
+      "originStateUT": "Punjab"
+    }
+  },
+  {
+    "id": "data-11",
+    "label": "Hemkund Sahib · motorcycle",
+    "description": "Group · 25-34 · 3 source records",
+    "shrines": [
+      "Hemkund Sahib"
+    ],
+    "empiricalDonor": "observed-046",
+    "support": 3,
+    "answers": {
+      "age": "25-34",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "2",
+      "tripStatus": "Ongoing",
+      "startPoint": "Haridwar",
+      "occupation": "Business/Self Employed",
+      "originStateUT": "Uttarakhand"
+    }
+  },
+  {
+    "id": "data-12",
+    "label": "Hemkund Sahib · hired taxi",
+    "description": "Group · 15-24 · 3 source records",
+    "shrines": [
+      "Hemkund Sahib"
+    ],
+    "empiricalDonor": "observed-038",
+    "support": 3,
+    "answers": {
+      "age": "15-24",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "6",
+      "tripStatus": "Completed",
+      "startPoint": "Rishikesh",
+      "occupation": "Student",
+      "originStateUT": "Punjab"
+    }
+  },
+  {
+    "id": "data-13",
+    "label": "Kedarnath · shared taxi",
+    "description": "Group · 25-34 · 3 source records",
+    "shrines": [
+      "Kedarnath"
+    ],
+    "empiricalDonor": "observed-003",
+    "support": 3,
+    "answers": {
+      "age": "25-34",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "2",
+      "tripStatus": "Completed",
+      "startPoint": "Haridwar",
+      "occupation": "Student",
+      "originStateUT": "Maharashtra"
+    }
+  },
+  {
+    "id": "data-14",
+    "label": "Gangotri · own car",
+    "description": "Group · 15-24 · 2 source records",
+    "shrines": [
+      "Gangotri",
+      "Badrinath"
+    ],
+    "empiricalDonor": "observed-075",
+    "support": 2,
+    "answers": {
+      "age": "15-24",
+      "gender": "Female",
+      "travelType": "Group",
+      "groupSize": "4",
+      "tripStatus": "Completed",
+      "startPoint": "Rishikesh",
+      "occupation": "Student",
+      "originStateUT": "Uttarakhand"
+    }
+  },
+  {
+    "id": "data-15",
+    "label": "Yamunotri · shared taxi",
+    "description": "Solo · 15-24 · 2 source records",
+    "shrines": [
+      "Yamunotri",
+      "Gangotri",
+      "Kedarnath",
+      "Badrinath"
+    ],
+    "empiricalDonor": "observed-095",
+    "support": 2,
+    "answers": {
+      "age": "15-24",
+      "gender": "Male",
+      "travelType": "Solo",
+      "groupSize": "1",
+      "tripStatus": "Ongoing",
+      "startPoint": "Haridwar",
+      "occupation": "Private Employee",
+      "originStateUT": "Maharashtra"
+    }
+  },
+  {
+    "id": "data-16",
+    "label": "Yamunotri · tour bus",
+    "description": "Group · 55-64 · 2 source records",
+    "shrines": [
+      "Yamunotri",
+      "Gangotri",
+      "Kedarnath",
+      "Badrinath"
+    ],
+    "empiricalDonor": "observed-094",
+    "support": 2,
+    "answers": {
+      "age": "55-64",
+      "gender": "Male",
+      "travelType": "Group",
+      "groupSize": "8",
+      "tripStatus": "Ongoing",
+      "startPoint": "Haridwar",
+      "occupation": "Business/Self Employed",
+      "originStateUT": "Madhya Pradesh"
+    }
+  }
+]

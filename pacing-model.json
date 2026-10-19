@@ -1,0 +1,80 @@
+{
+  "source": "Chardham_travel_survey_main_final.xlsx",
+  "sha256": "0ba3e339b73ca72e3d0e043d417e4f0db80287cef1d52bf629d38633b27a1802",
+  "timingRecords": 115,
+  "maximumSectionSeconds": 1800,
+  "pageAliases": {
+    "page-1-A": "page-1-E",
+    "page-6-E": "page-6-F"
+  },
+  "sections": {
+    "page-0-consent": {
+      "support": 109,
+      "meanSeconds": 167.165,
+      "medianSeconds": 24
+    },
+    "page-2-B": {
+      "support": 114,
+      "meanSeconds": 133.474,
+      "medianSeconds": 69.0
+    },
+    "page-2B-journey": {
+      "support": 115,
+      "meanSeconds": 92.087,
+      "medianSeconds": 68
+    },
+    "page-2C-lastmile": {
+      "support": 115,
+      "meanSeconds": 93.53,
+      "medianSeconds": 62
+    },
+    "page-3-C": {
+      "support": 115,
+      "meanSeconds": 86.53,
+      "medianSeconds": 48
+    },
+    "page-4-C-last-mile": {
+      "support": 115,
+      "meanSeconds": 39.878,
+      "medianSeconds": 28
+    },
+    "page-5-D": {
+      "support": 113,
+      "meanSeconds": 90.283,
+      "medianSeconds": 49
+    },
+    "page-1-E": {
+      "support": 115,
+      "meanSeconds": 39.583,
+      "medianSeconds": 32
+    },
+    "page-6-F": {
+      "support": 115,
+      "meanSeconds": 35.33,
+      "medianSeconds": 26
+    },
+    "page-5-acceptance": {
+      "support": 70,
+      "meanSeconds": 69.343,
+      "medianSeconds": 47.5
+    }
+  },
+  "perCard": {
+    "page-3-C": {
+      "support": 108,
+      "meanSeconds": 20.323,
+      "medianSeconds": 10.0
+    },
+    "page-4-C-last-mile": {
+      "support": 106,
+      "meanSeconds": 9.824,
+      "medianSeconds": 7.083
+    }
+  },
+  "notes": [
+    "Section medians reduce the effect of long pauses.",
+    "Consent reading is capped at 15 seconds; the remaining section weights use the observed medians.",
+    "Per-card estimates divide section time by unique answered tasks; stored task seconds are cumulative from page entry, not separate thinking times.",
+    "The runner applies a requested 55% minimum DCE share of planned post-consent time. This is an explicit pacing assumption, not a finding that DCE was always the longest observed section."
+  ]
+}

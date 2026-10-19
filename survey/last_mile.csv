@@ -1,0 +1,49 @@
+Dham,Task,Cost_A,Time_A,Comfort_A,Reliability_A,Transfers_A,Cost_B,Time_B,Comfort_B,Reliability_B,Transfers_B,Cost_C,Time_C,Comfort_C,Reliability_C,Transfers_C,Alt_A,Alt_B,Alt_C
+Kedarnath,1,0,7.0,Low,Medium,0,8000,7.0,High,Medium,0,1500,0.75,High,Medium,0,Trek/Walk,Palki/Dandi,Ropeway
+Kedarnath,2,0,8.0,Low,Medium,0,8000,7.0,High,Medium,0,1500,0.75,High,Medium,0,Trek/Walk,Palki/Dandi,Ropeway
+Kedarnath,3,0,8.0,Low,Medium,0,8000,7.0,High,Medium,0,3000,0.6,High,High,0,Trek/Walk,Palki/Dandi,Ropeway
+Kedarnath,4,0,7.0,Low,Medium,0,7000,0.5,High,Low,0,1500,0.75,High,Medium,0,Trek/Walk,Helicopter,Ropeway
+Kedarnath,5,0,8.0,Low,Medium,0,7000,0.5,High,Low,0,1500,0.75,High,Medium,0,Trek/Walk,Helicopter,Ropeway
+Kedarnath,6,0,8.0,Low,Medium,0,7000,0.5,High,Low,0,3000,0.6,High,High,0,Trek/Walk,Helicopter,Ropeway
+Kedarnath,7,0,7.0,Low,Medium,0,3000,5.0,Medium,Medium,0,1500,0.75,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Kedarnath,8,0,7.0,Low,Medium,0,7000,0.5,High,Low,0,2000,0.6,High,High,0,Trek/Walk,Helicopter,Ropeway
+Kedarnath,9,0,7.0,Low,Medium,0,8000,7.0,High,Medium,0,3000,0.6,High,High,0,Trek/Walk,Palki/Dandi,Ropeway
+Kedarnath,10,0,9.0,Low,Low,0,7000,0.5,High,Low,0,2000,0.6,High,High,0,Trek/Walk,Helicopter,Ropeway
+Kedarnath,11,0,9.0,Low,Low,0,7000,0.5,High,Low,0,1500,0.75,High,Medium,0,Trek/Walk,Helicopter,Ropeway
+Kedarnath,12,0,9.0,Low,Low,0,7000,0.5,High,Low,0,3000,0.6,High,High,0,Trek/Walk,Helicopter,Ropeway
+Kedarnath,13,0,9.0,Low,Low,0,3000,5.0,Medium,Medium,0,3000,0.6,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Kedarnath,14,0,8.0,Low,Medium,0,3000,5.0,Medium,Medium,0,1500,0.75,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Kedarnath,15,0,9.0,Low,Low,0,8000,7.0,High,Medium,0,3000,0.6,High,High,0,Trek/Walk,Palki/Dandi,Ropeway
+Kedarnath,16,0,7.0,Low,Medium,0,7000,0.5,High,Low,0,3000,0.6,High,High,0,Trek/Walk,Helicopter,Ropeway
+Yamunotri,1,0,3.5,Low,Medium,0,3500,3.0,High,Medium,0,800,0.5,High,Medium,0,Trek/Walk,Kandi/Palki,Ropeway
+Yamunotri,2,0,3.0,Low,Medium,0,1500,2.0,Medium,Medium,0,800,0.5,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,3,0,4.0,Low,Low,0,2000,2.5,Medium,Medium,0,1000,0.25,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,4,0,4.0,Low,Low,0,1500,2.0,Medium,Medium,0,1500,0.25,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,5,0,3.0,Low,Medium,0,3500,3.0,High,Medium,0,1500,0.25,High,High,0,Trek/Walk,Kandi/Palki,Ropeway
+Yamunotri,6,0,4.0,Low,Low,0,2000,2.5,Medium,Medium,0,1500,0.25,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,7,0,3.5,Low,Medium,0,2000,2.5,Medium,Medium,0,800,0.5,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,8,0,4.0,Low,Low,0,1500,2.0,Medium,Medium,0,1000,0.25,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,9,0,3.5,Low,Medium,0,1500,2.0,Medium,Medium,0,800,0.5,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,10,0,3.5,Low,Medium,0,1500,2.0,Medium,Medium,0,1000,0.25,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,11,0,4.0,Low,Low,0,3500,3.0,High,Medium,0,1000,0.25,High,High,0,Trek/Walk,Kandi/Palki,Ropeway
+Yamunotri,12,0,3.5,Low,Medium,0,3500,3.0,High,Medium,0,1500,0.25,High,High,0,Trek/Walk,Kandi/Palki,Ropeway
+Yamunotri,13,0,4.0,Low,Low,0,3500,3.0,High,Medium,0,800,0.5,High,Medium,0,Trek/Walk,Kandi/Palki,Ropeway
+Yamunotri,14,0,3.0,Low,Medium,0,2000,2.5,Medium,Medium,0,800,0.5,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Yamunotri,15,0,3.0,Low,Medium,0,3500,3.0,High,Medium,0,800,0.5,High,Medium,0,Trek/Walk,Kandi/Palki,Ropeway
+Yamunotri,16,0,4.0,Low,Low,0,3500,3.0,High,Medium,0,1500,0.25,High,High,0,Trek/Walk,Kandi/Palki,Ropeway
+Hemkund Sahib,1,0,8.0,Low,Medium,0,6000,7.0,High,Medium,0,3500,1.5,High,High,0,Trek/Walk,Palki/Porter,Ropeway
+Hemkund Sahib,2,0,12.0,Low,Low,0,4000,5.0,Medium,Medium,0,2500,1.5,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,3,0,10.0,Low,Medium,0,4000,5.0,Medium,Medium,0,3500,1.5,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,4,0,10.0,Low,Medium,0,3000,6.0,Medium,Medium,0,2000,2.0,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,5,0,12.0,Low,Low,0,4000,5.0,Medium,Medium,0,3500,1.5,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,6,0,12.0,Low,Low,0,6000,7.0,High,Medium,0,2000,2.0,High,Medium,0,Trek/Walk,Palki/Porter,Ropeway
+Hemkund Sahib,7,0,10.0,Low,Medium,0,4000,5.0,Medium,Medium,0,2000,2.0,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,8,0,8.0,Low,Medium,0,4000,5.0,Medium,Medium,0,3500,1.5,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,9,0,12.0,Low,Low,0,6000,7.0,High,Medium,0,3500,1.5,High,High,0,Trek/Walk,Palki/Porter,Ropeway
+Hemkund Sahib,10,0,10.0,Low,Medium,0,6000,7.0,High,Medium,0,3500,1.5,High,High,0,Trek/Walk,Palki/Porter,Ropeway
+Hemkund Sahib,11,0,10.0,Low,Medium,0,6000,7.0,High,Medium,0,2000,2.0,High,Medium,0,Trek/Walk,Palki/Porter,Ropeway
+Hemkund Sahib,12,0,8.0,Low,Medium,0,4000,5.0,Medium,Medium,0,2000,2.0,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,13,0,8.0,Low,Medium,0,6000,7.0,High,Medium,0,2000,2.0,High,Medium,0,Trek/Walk,Palki/Porter,Ropeway
+Hemkund Sahib,14,0,12.0,Low,Low,0,4000,5.0,Medium,Medium,0,2000,2.0,High,Medium,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,15,0,8.0,Low,Medium,0,4000,5.0,Medium,Medium,0,2500,1.5,High,High,0,Trek/Walk,Pony/Mule,Ropeway
+Hemkund Sahib,16,0,8.0,Low,Medium,0,6000,7.0,High,Medium,0,2500,1.5,High,High,0,Trek/Walk,Palki/Porter,Ropeway
